@@ -1,6 +1,6 @@
 # The Shoppies
----
-## Shopify UX/Web Developer Internship Challenge Winter 2021
+## Shopify Frontend Developer Intern Challenge - Summer 2021
+
 ### Overview
 This is a web app to manage movie nominations for Shoppies.
 
