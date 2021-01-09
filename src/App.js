@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import MovieListContainer from './containers/MovieListContainer';
 
 function App() {
   return (
@@ -7,6 +8,7 @@ function App() {
       <header className="App-header">
         <h1>The Shoppies</h1>
       </header>
+      <MovieListContainer />
     </div>
   );
 }
