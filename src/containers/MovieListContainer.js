@@ -3,20 +3,20 @@
 // and pass that data down to its child MovieList
 
 import React, { Component } from 'react'
+import MovieSearch from '../components/movies/MovieSearch'
 import MovieList from '../components/movies/MovieList'
-import MovieSearch from '../components/movies/MovieSearch/'
 
 class MovieListContainer extends Component {
   state = {
-    movies =[]
+    movies: []
   }
 
   fetchMovies = (query) => {
-    fetch(`http://www.omdbapi.com/?t=${query}&apikey=4ec7dca`)
+    fetch(`http://www.omdbapi.com/?s=${query}&apikey=4ec7dca`)
       .then(resp => resp.json())
       .then(moviesData => {
-        if (moviesData.hasOwnProperty('Search')) {
-          this.setState({ movies: moviesData.search.map(movie => movie.title) })
+        if (moviesData.totalResults > 0) {
+          this.setState({ movies: moviesData.Search.map(movie => movie) })
         } else {
           this.setState({ movies: [] })
         }
