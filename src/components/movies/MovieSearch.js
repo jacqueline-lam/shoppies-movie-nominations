@@ -1,29 +1,29 @@
-import React, { Component } from 'react'
+import React, { useState, useEffect } from 'react';
 
-export default class MovieSearch extends Component {
-  state = {
-    query: undefined
-  }
+const MovieSearch = (props) => {
+  const [query, setQuery] = useState('')
 
-  handleQueryChange = (event) => {
+  const handleQueryChange = (event) => {
     const searchInput = event.target.value
-    this.setState({ query: searchInput }, () => {
-      // callback after state is updated
-      this.props.fetchMovies(searchInput)
-    })
+    setQuery(searchInput)
   }
 
-  render() {
-    return (
-      <div id='movie-search-bar'>
-        <label>Movie Title: </label>
-        <input
-          type='text'
-          value={this.state.query}
-          onChange={this.handleQueryChange}
-          placeholder="Type here..."
-        />
-      </div>
-    )
-  }
+  useEffect(() => {
+    // callback after state is updated
+    props.fetchMovies(query)
+  })
+
+  return (
+    <div id='movie-search-bar'>
+      <label>Movie Title: </label>
+      <input
+        type='text'
+        value={query}
+        onChange={handleQueryChange}
+        placeholder="Type here..."
+      />
+    </div>
+  )
 }
+
+export default MovieSearch;
