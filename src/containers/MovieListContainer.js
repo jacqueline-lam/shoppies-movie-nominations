@@ -6,16 +6,20 @@ import React, { Component } from 'react'
 import MovieSearch from '../components/movies/MovieSearch'
 import MovieList from '../components/movies/MovieList'
 
+const API_KEY = '4ec7dca'
+const BASE_URL = 'http://www.omdbapi.com/?'
+
 class MovieListContainer extends Component {
   state = {
+    // query: '',
     movies: []
   }
 
   fetchMovies = (query) => {
-    fetch(`http://www.omdbapi.com/?s=${query}&apikey=4ec7dca`)
+    fetch(BASE_URL.concat(`s=${query}`, `&apikey=${API_KEY}`))
       .then(resp => resp.json())
       .then(moviesData => {
-        if (moviesData.totalResults > 0) {
+        if (moviesData.Response === 'True') {
           this.setState({ movies: moviesData.Search.map(movie => movie) })
         } else {
           this.setState({ movies: [] })
@@ -33,8 +37,8 @@ class MovieListContainer extends Component {
     )
   }
 
-  componentDidMount() {
-    this.fetchMovies()
-  }
+  // componentDidMount() {
+  //   this.fetchMovies()
+  // }
 }
 export default MovieListContainer

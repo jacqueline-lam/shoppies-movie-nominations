@@ -2,28 +2,27 @@ import React, { Component } from 'react'
 
 export default class MovieSearch extends Component {
   state = {
-    query: ''
+    query: undefined
   }
 
-  handleSubmit = event => {
-    event.preventDefault()
-    this.props.fetchMovies(this.state.query)
+  handleQueryChange = (event) => {
+    const searchInput = event.target.value
+    this.setState({ query: searchInput }, () => {
+      // callback after state is updated
+      this.props.fetchMovies(searchInput)
+    })
   }
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            Movie Title:
-            <input
-              type='text'
-              value={this.state.query}
-              onChange={event => this.setState({ query: event.target.value })}
-            />
-          </label>
-          <input type="submit" value="Search" />
-        </form>
+      <div id='movie-search-bar'>
+        <label>Movie Title: </label>
+        <input
+          type='text'
+          value={this.state.query}
+          onChange={this.handleQueryChange}
+          placeholder="Type here..."
+        />
       </div>
     )
   }
