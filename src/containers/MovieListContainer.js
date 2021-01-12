@@ -32,8 +32,9 @@ const MovieListContainer = () => {
     setNominees(oldNominees => [...oldNominees, movie])
   }
 
-  const removeNominee = (movie) => {
-    // remove movie object from array of nominees
+  const removeNominee = (movieID) => {
+    // remove movie object from array of nominees w/o mutating the state
+    setNominees(oldNominees => oldNominees.filter(movie => movie.imdbID !== movieID))
   }
 
   return (
