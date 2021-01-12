@@ -9,7 +9,7 @@ const MovieSearch = (props) => {
   }
 
   useEffect(() => {
-    // callback after state is updated
+    // fetch new results with callback fn whenever state is updated
     props.fetchMovies(query)
   })
 
