@@ -6,9 +6,9 @@ const NominateButton = ({ movie, addNominee }) => {
 
   const handleNominationBtn = (movie) => {
     setDisabledBtn(btnPressed => btnPressed = true);
+    addNominee(movie)
     console.log(disabledBtn)
     console.log(movie)
-    addNominee(movie)
   }
 
   // useEffect(() => {

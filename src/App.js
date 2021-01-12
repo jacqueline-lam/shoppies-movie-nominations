@@ -1,7 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
 import MovieListContainer from './containers/MovieListContainer';
-import NominationListContainer from './containers/NominationListContainer';
 
 function App() {
   return (
@@ -10,7 +9,6 @@ function App() {
         <h1>The Shoppies</h1>
       </header>
       <MovieListContainer />
-      <NominationListContainer />
     </div>
   );
 }

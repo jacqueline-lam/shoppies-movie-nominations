@@ -27,7 +27,13 @@ const MovieListContainer = () => {
   }
 
   const addNominee = (movie) => {
-    setNominees([...nominees, movie])
+    // Update state w/ new array by combining the old array with
+    // the new movie obj using JS Spread operator
+    setNominees(oldNominees => [...oldNominees, movie])
+  }
+
+  const removeNominee = (movie) => {
+    // remove movie object from array of nominees
   }
 
   return (
@@ -35,7 +41,7 @@ const MovieListContainer = () => {
       {/* render search bar and pass down handler fn as a prop */}
       < MovieSearch fetchMovies={fetchMovies} />
       < MovieList movies={movies} addNominee={addNominee} />
-      {/* < NominatedMovieList nomineMes={nominees} /> */}
+      < NominatedMovieList nominees={nominees} removeNominee={removeNominee} />
     </div>
   )
 
