@@ -1,15 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Button from '@material-ui/core/Button';
 
-const NominateButton = ({ movie }) => {
+const NominateButton = ({ movie, addNominee }) => {
   const [disabledBtn, setDisabledBtn] = useState(false);
 
   const handleNominationBtn = (movie) => {
     setDisabledBtn(btnPressed => btnPressed = true);
     console.log(disabledBtn)
     console.log(movie)
-    // const imdbId = event.target.parentElement.id
+    addNominee(movie)
   }
+
+  // useEffect(() => {
+  //   addNominee(movie)
+  // })
 
   return (
     <Button

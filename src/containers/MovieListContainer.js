@@ -2,40 +2,43 @@
 // Store search results from the response in its component state
 // and pass that data down to its child MovieList
 
-import React, { Component } from 'react'
+import React, { useState, useEffect } from 'react'
 import MovieSearch from '../components/movies/MovieSearch'
 import MovieList from '../components/movies/MovieList'
+import NominatedMovieList from '../components/nominations/NominatedMovieList'
 
 const API_KEY = '4ec7dca'
 const BASE_URL = 'http://www.omdbapi.com/?'
 
-class MovieListContainer extends Component {
-  state = {
-    // query: '',
-    movies: []
-  }
+const MovieListContainer = () => {
+  const [movies, setMovies] = useState([])
+  const [nominees, setNominees] = useState([])
 
-  fetchMovies = (query) => {
+  const fetchMovies = (query) => {
     fetch(BASE_URL.concat(`s=${query}`, `&apikey=${API_KEY}`))
       .then(resp => resp.json())
       .then(moviesData => {
         if (moviesData.Response === 'True') {
-          this.setState({ movies: moviesData.Search.map(movie => movie) })
+          setMovies(moviesData.Search.map(movie => movie))
         } else {
-          this.setState({ movies: [] })
+          setMovies([])
         }
       })
   }
 
-  render() {
-    return (
-      <div>
-        {/* render search bar and pass down handler fn as a prop */}
-        < MovieSearch fetchMovies={this.fetchMovies} />
-        < MovieList movies={this.state.movies} />
-      </div>
-    )
+  const addNominee = (movie) => {
+    setNominees([...nominees, movie])
   }
+
+  return (
+    <div>
+      {/* render search bar and pass down handler fn as a prop */}
+      < MovieSearch fetchMovies={fetchMovies} />
+      < MovieList movies={movies} addNominee={addNominee} />
+      {/* < NominatedMovieList nominees={nominees} /> */}
+    </div>
+  )
+
 
   // componentDidMount() {
   //   this.fetchMovies()

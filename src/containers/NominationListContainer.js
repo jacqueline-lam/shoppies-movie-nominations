@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import NominationList from '../components/nominations/NominationList'
+// import NominationList from '../components/nominations/NominationList'
 
 
 const NominationListContainer = () => {

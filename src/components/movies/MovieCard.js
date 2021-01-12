@@ -2,7 +2,7 @@ import React from 'react';
 import moviePosterPlaceholder from '../../images/movie-placeholder.png';
 import NominateButton from './NominateButton'
 
-const MovieCard = ({ movie }) => {
+const MovieCard = ({ movie, addNominee }) => {
   const title = movie.Title;
   const year = movie.Year;
   const poster = movie.Poster !== "N/A" ? movie.Poster : moviePosterPlaceholder;
@@ -12,7 +12,7 @@ const MovieCard = ({ movie }) => {
       <img className='movie-thumbnail img-fluid' alt='movie thumbnail' src={poster} />
       <h1>{title}</h1>
       <i>{year}</i>
-      <NominateButton movie={movie} />
+      <NominateButton movie={movie} addNominee={addNominee} />
     </div >
   );
 };
