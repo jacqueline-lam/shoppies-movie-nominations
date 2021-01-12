@@ -1,19 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import Button from '@material-ui/core/Button';
 
-const NominateButton = ({ movie, addNominee }) => {
-  const [disabledBtn, setDisabledBtn] = useState(false);
+const NominateButton = ({ movie, isNominated, addNominee }) => {
+  // const [disabledBtn, setDisabledBtn] = useState(isNominated);
 
   const handleNominationBtn = (movie) => {
-    setDisabledBtn(btnPressed => btnPressed = true);
     addNominee(movie)
-    console.log(disabledBtn)
-    console.log(movie)
+    // setDisabledBtn(btnPressed => btnPressed = true);
   }
-
-  // useEffect(() => {
-  //   addNominee(movie)
-  // })
 
   return (
     <Button
@@ -23,8 +17,8 @@ const NominateButton = ({ movie, addNominee }) => {
       color="primary"
       style={{ borderRadius: "30px" }}
       onClick={() => handleNominationBtn(movie)}
-      disabled={disabledBtn}>
-      {disabledBtn ? `Nominated` : `Nominate`}
+      disabled={isNominated}>
+      {isNominated ? `Nominated` : `Nominate`}
     </Button>
   );
 };

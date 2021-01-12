@@ -41,7 +41,7 @@ const MovieListContainer = () => {
     <div>
       {/* render search bar and pass down handler fn as a prop */}
       < MovieSearch fetchMovies={fetchMovies} />
-      < MovieList movies={movies} addNominee={addNominee} />
+      < MovieList movies={movies} nominees={nominees} addNominee={addNominee} />
       < NominatedMovieList nominees={nominees} removeNominee={removeNominee} />
     </div>
   )
