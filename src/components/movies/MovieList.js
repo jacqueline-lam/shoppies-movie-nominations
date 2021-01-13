@@ -2,10 +2,9 @@ import React from 'react';
 import MovieCard from './MovieCard';
 
 const MovieList = ({ movies, nominees, addNominee }) => {
-  const isNominated = (movieID) => !!nominees.find(nominee => nominee.imdbID === movieID)
-  // (
-  //   !!nominees.find(nominee => nominee.imdbID === movieID)
-  // )
+  const isNominated = (movieID) => {
+    return (!!nominees.find(nominee => nominee.imdbID === movieID))
+  }
 
   return (
     <div>
