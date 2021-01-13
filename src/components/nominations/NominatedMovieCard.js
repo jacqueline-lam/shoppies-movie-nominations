@@ -13,7 +13,7 @@ const NominatedMovieCard = ({ movie, removeNominee }) => {
 
   const handleRemoveBtn = (movie) => {
     setRemovedMovie(true);
-    removeNominee(movie.imdbID);
+    removeNominee(movie);
   }
 
   return (
