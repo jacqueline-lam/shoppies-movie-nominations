@@ -2,8 +2,12 @@ import React from 'react';
 import moviePosterPlaceholder from '../../images/movie-placeholder.png';
 import Button from '@material-ui/core/Button';
 
-const MovieCard = ({ movie, isNominated, addNominee }) => {
+const MovieCard = ({ movie, disableBtn, btnContent, addNominee }) => {
   const poster = movie.Poster !== "N/A" ? movie.Poster : moviePosterPlaceholder;
+
+  // const buttonValue = () => {
+  //   disableBtn ? `Nominated` : `Nominate`
+  // }
 
   return (
     <div className='movie-card'>
@@ -18,8 +22,8 @@ const MovieCard = ({ movie, isNominated, addNominee }) => {
         color="primary"
         style={{ borderRadius: "30px" }}
         onClick={() => addNominee(movie)}
-        disabled={isNominated}>
-        {isNominated ? `Nominated` : `Nominate`}
+        disabled={disableBtn}>
+        {btnContent}
       </Button>
     </div >
   );
