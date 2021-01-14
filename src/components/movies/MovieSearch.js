@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const MovieSearch = (props) => {
+const MovieSearch = ({ fetchMovies }) => {
   const [query, setQuery] = useState('')
 
   const handleQueryChange = (event) => {
@@ -10,7 +10,7 @@ const MovieSearch = (props) => {
 
   useEffect(() => {
     // fetch new results with callback fn whenever state is updated
-    props.fetchMovies(query)
+    fetchMovies(query)
   })
 
   return (

@@ -14,6 +14,7 @@ const NOMINEE_LIMIT = 5;
 
 const MovieListContainer = () => {
   const [movies, setMovies] = useState([]);
+  const [totalSearchResults, setTotalSearchResults] = useState(0)
   const [nominees, setNominees] = useState([]);
   const [nominationFull, setNominationFull] = useState(false);
 
@@ -22,8 +23,10 @@ const MovieListContainer = () => {
       .then(resp => resp.json())
       .then(moviesData => {
         if (moviesData.Response === 'True') {
+          setTotalSearchResults(moviesData.totalResults)
           setMovies(moviesData.Search.map(movie => movie));
         } else {
+          setTotalSearchResults(0)
           setMovies([]);
         }
       });
@@ -57,6 +60,7 @@ const MovieListContainer = () => {
       < MovieSearch fetchMovies={fetchMovies} />
       < MovieList
         movies={movies}
+        totalResults={totalSearchResults}
         nominees={nominees}
         nominationFull={nominationFull}
         addNominee={addNominee} />

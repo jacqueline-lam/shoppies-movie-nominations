@@ -1,15 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import MovieCard from './MovieCard';
 
-const MovieList = ({ movies, nominees, nominationFull, addNominee }) => {
+const MovieList = ({ movies, totalResults, nominees, nominationFull, addNominee }) => {
+  const movieCount = movies.length
+  const [pageNum, setPageNum] = useState(1)
   const isNominated = (movieID) => {
     return (!!nominees.find(nominee => nominee.imdbID === movieID))
-  }
+  };
 
   return (
-    <div>
+    <div id='movie-list'>
+      <p>{`${totalResults} matches`}</p>
+      <i>{`Page ${pageNum} of ${Math.ceil(totalResults / movieCount)}`}</i>
       <ul>
-        {(movies.length > 0) ? (
+        {(movieCount > 0) ? (
           movies.map(movieData => <MovieCard
             key={movieData.imdbID}
             movie={movieData}
