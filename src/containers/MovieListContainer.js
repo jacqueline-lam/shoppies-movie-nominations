@@ -13,28 +13,42 @@ const BASE_URL = 'http://www.omdbapi.com/?';
 const NOMINEE_LIMIT = 5;
 
 const MovieListContainer = () => {
+  const [searchCount, setSearchCount] = useState(0);
+  // states for each fetch
+  const [errorMessage, setErrorMessage] = useState(null);
   const [movies, setMovies] = useState([]);
-  const [totalSearchResults, setTotalSearchResults] = useState(0)
-  // const [searchTitle, setSearchTitle] = useState(null)
-  const [resultsPageNum, setResultsPageNum] = useState(1)
+  const [totalSearchResults, setTotalSearchResults] = useState(0);
+  const [resultsPageNum, setResultsPageNum] = useState(1);
+  //nominees state
   const [nominees, setNominees] = useState([]);
   const [nominationFull, setNominationFull] = useState(false);
 
+  const resetFetchStates = () => {
+    setErrorMessage(null)
+    setMovies([])
+    setTotalSearchResults(0)
+    setResultsPageNum(1)
+  }
+
   const fetchMovies = (query) => {
-    // setResultsPageNum(pageNum);
-    fetch(BASE_URL.concat(`s=${query}`, `&page=${resultsPageNum}`, `&apikey=${API_KEY}`))
+    resetFetchStates();
+    if (!query) return false;
+
+    let apiUrl = BASE_URL.concat(`s=${query}`, `&page=${resultsPageNum}`, `&apikey=${API_KEY}`);
+    console.log(`${searchCount}: Calling API @ ${apiUrl}`);
+    setSearchCount(searchCount + 1);
+    fetch(apiUrl)
       .then(resp => resp.json())
       .then(moviesData => {
         if (moviesData.Response === 'True') {
           setTotalSearchResults(moviesData.totalResults)
-          setMovies(moviesData.Search.map(movie => movie));
+          setMovies(moviesData.Search);
         } else {
-          setTotalSearchResults(0)
-          setMovies([]);
-          setResultsPageNum(0)
+          setErrorMessage(moviesData.Error)
         }
         // setSearchTitle(query);
       });
+    return true;
   };
 
   const updatePageNum = (page) => {

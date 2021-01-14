@@ -8,10 +8,12 @@ const MovieSearch = ({ fetchMovies }) => {
     setQuery(searchInput)
   }
 
+  // Tells useEffect function to listen for any changes to query state var
+  // when query state changes, execute this fn
   useEffect(() => {
-    // fetch new results with callback fn whenever state is updated
-    fetchMovies(query)
-  })
+    console.log(`Searching for: ${query}`);
+    fetchMovies(query);
+  }, [query])
 
   return (
     <div id='movie-search-bar'>
