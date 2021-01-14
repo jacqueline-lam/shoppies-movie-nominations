@@ -15,11 +15,14 @@ const NOMINEE_LIMIT = 5;
 const MovieListContainer = () => {
   const [movies, setMovies] = useState([]);
   const [totalSearchResults, setTotalSearchResults] = useState(0)
+  // const [searchTitle, setSearchTitle] = useState(null)
+  const [resultsPageNum, setResultsPageNum] = useState(1)
   const [nominees, setNominees] = useState([]);
   const [nominationFull, setNominationFull] = useState(false);
 
   const fetchMovies = (query) => {
-    fetch(BASE_URL.concat(`s=${query}`, `&apikey=${API_KEY}`))
+    // setResultsPageNum(pageNum);
+    fetch(BASE_URL.concat(`s=${query}`, `&page=${resultsPageNum}`, `&apikey=${API_KEY}`))
       .then(resp => resp.json())
       .then(moviesData => {
         if (moviesData.Response === 'True') {
@@ -28,9 +31,16 @@ const MovieListContainer = () => {
         } else {
           setTotalSearchResults(0)
           setMovies([]);
+          setResultsPageNum(0)
         }
+        // setSearchTitle(query);
       });
   };
+
+  const updatePageNum = (page) => {
+    setResultsPageNum(page)
+    // fetchMovie(searchTitle, page)
+  }
 
   const addNominee = (movie) => {
     const nomineeCount = nominees.length;
@@ -60,9 +70,11 @@ const MovieListContainer = () => {
       < MovieSearch fetchMovies={fetchMovies} />
       < MovieList
         movies={movies}
+        resultsPageNum={resultsPageNum}
         totalResults={totalSearchResults}
         nominees={nominees}
         nominationFull={nominationFull}
+        updatePageNum={updatePageNum}
         addNominee={addNominee} />
       < NominatedMovieList
         nominees={nominees}

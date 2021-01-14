@@ -6,13 +6,13 @@ import moviePosterPlaceholder from '../../images/movie-placeholder.png';
 // remove deleted movie from nomination list
 // change button disabled state to false;
 const NominatedMovieCard = ({ movie, removeNominee }) => {
-  const [removedMovie, setRemovedMovie] = useState(false);
+  const [isRemoved, setIsRemoved] = useState(false);
   const title = movie.Title;
   const year = movie.Year;
   const poster = movie.Poster !== "N/A" ? movie.Poster : moviePosterPlaceholder;
 
   const handleRemoveBtn = (movie) => {
-    setRemovedMovie(true);
+    setIsRemoved(true);
     removeNominee(movie);
   }
 
@@ -28,8 +28,8 @@ const NominatedMovieCard = ({ movie, removeNominee }) => {
         color="primary"
         style={{ borderRadius: "30px" }}
         onClick={() => handleRemoveBtn(movie)}
-        disabled={removedMovie}>
-        {removedMovie ? `Removed` : `Remove`}
+        disabled={isRemoved}>
+        {isRemoved ? `Removed` : `Remove`}
       </button>
     </div >
   );
