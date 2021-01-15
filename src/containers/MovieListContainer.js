@@ -45,7 +45,7 @@ const MovieListContainer = () => {
       .then(resp => resp.json())
       .then(moviesData => {
         if (moviesData.Response === 'True') {
-          setTotalMatches(moviesData.totalResults);
+          setTotalMatches(parseInt(moviesData.totalResults));
           setMovies(moviesData.Search);
           setLastSearchTitle(query);
         } else {

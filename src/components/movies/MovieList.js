@@ -1,6 +1,7 @@
 import React from 'react';
 import MovieCard from './MovieCard';
 import Button from '@material-ui/core/Button';
+import Pluralize from 'react-pluralize';
 
 const MovieList = (props) => {
   const {
@@ -14,21 +15,20 @@ const MovieList = (props) => {
     addNominee
   } = props;
 
-  const resultsPerPage = 10
-  const totalPages = Math.ceil(totalResults / resultsPerPage) || 0
-  const movieCount = movies.length
+  const resultsPerPage = 10;
+  const totalPages = Math.ceil(totalResults / resultsPerPage) || 0;
 
   const handlePrevPageBtn = () => {
-    updatePageNum(resultsPageNum - 1)
-  }
+    updatePageNum(resultsPageNum - 1);
+  };
 
   const handleNextPageBtn = () => {
     // setPageNum(prevPageNum => prevPageNum + 1)
-    updatePageNum(resultsPageNum + 1)
+    updatePageNum(resultsPageNum + 1);
   };
 
   const isNominated = (movieID) => {
-    return (!!nominees.find(nominee => nominee.imdbID === movieID))
+    return (!!nominees.find(nominee => nominee.imdbID === movieID));
   };
 
   const renderResults = () => {
@@ -40,11 +40,11 @@ const MovieList = (props) => {
         btnContent={isNominated(movieData.imdbID) ? `Nominated` : `Nominate`}
         addNominee={addNominee}
       />
-    )
+    );
 
     return [
       <div id='movie-results'>
-        <p>{`${totalResults} matches`}</p>
+        <Pluralize singular={'match'} plural={'matches'} count={totalResults} />
         <Button
           className="prev-page-btn"
           size="small"
@@ -65,16 +65,16 @@ const MovieList = (props) => {
         {renderMovies}
       </div>
     ]
-  }
+  };
 
   return (
     <div id='movie-list'>
-      {(movieCount > 0) ? (
+      {(totalResults > 0) ? (
         renderResults()
       ) : (
           <p>{errorMsg} Try searching your favorite movie!</p>
         )}
     </div>
   );
-}
+};
 export default MovieList;
