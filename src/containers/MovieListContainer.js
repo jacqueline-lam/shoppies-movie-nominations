@@ -31,8 +31,8 @@ const MovieListContainer = () => {
   };
 
   const fetchMovies = (query, page = 1) => {
-    if (!query) return false;
     resetFetchStates(query);
+    if (!query) return false;
 
     let apiUrl = BASE_URL.concat(`s=${query}`, `&page=${page}`, `&apikey=${API_KEY}`);
     console.log(`${searchCount}: Calling API @ ${apiUrl}`);
