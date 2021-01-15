@@ -54,7 +54,7 @@ The code is available as open source under the terms of the [MIT License](https:
 Everyone interacting in the project’s codebases is expected to follow the [code of conduct](https://github.com/jacqueline-lam/bolderer_sinatra_app/blob/master/CODE_OF_CONDUCT.md).
 
 ### Attributions
-
+* Logo designed based on icon made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
 
 ### Contact
 <br>:link: &nbsp; [jacqueline-lam.github.io/portfolio-app/](https://jacqueline-lam.github.io/portfolio-app/) <br>

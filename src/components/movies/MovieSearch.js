@@ -17,12 +17,11 @@ const MovieSearch = ({ fetchMovies }) => {
 
   return (
     <div id='movie-search-bar'>
-      <label>Movie Title: </label>
       <input
         type='text'
         value={query}
         onChange={handleQueryChange}
-        placeholder="Type here..."
+        placeholder="Search Movie Here"
       />
     </div>
   )
