@@ -1,7 +1,3 @@
-// fetch data from OMDB API
-// Store search results from the response in its component state
-// and pass that data down to its child MovieList
-
 import React, { useState } from 'react';
 import MovieSearch from '../components/movies/MovieSearch';
 import MovieList from '../components/movies/MovieList';
@@ -13,54 +9,56 @@ const BASE_URL = 'http://www.omdbapi.com/?';
 const NOMINEE_LIMIT = 5;
 
 const MovieListContainer = () => {
+  // STATES
   const [searchCount, setSearchCount] = useState(0);
-  // states for each fetch
-  const [lastQuery, setLastQuery] = useState('');
-  const [errorMessage, setErrorMessage] = useState(null);
+  // States for each fetch
+  const [lastSearchTitle, setLastSearchTitle] = useState('');
+  const [error, setError] = useState(null);
   const [movies, setMovies] = useState([]);
-  const [totalSearchResults, setTotalSearchResults] = useState(0);
+  const [totalMatches, setTotalMatches] = useState(0);
   const [resultsPageNum, setResultsPageNum] = useState(1);
-  //nominees state
+  // Nominees state
   const [nominees, setNominees] = useState([]);
   const [nominationFull, setNominationFull] = useState(false);
 
-  const resetFetchStates = () => {
-    setErrorMessage(null)
-    setMovies([])
-    setTotalSearchResults(0)
-  }
+  const resetFetchStates = (searchTitle) => {
+    // Reset resultsPageNum and lastSearchTitle if is a newSearchTitle
+    const newSearchTitle = (searchTitle !== lastSearchTitle);
+    if (newSearchTitle) setResultsPageNum(1);
+    setError(null);
+    setMovies([]);
+    setTotalMatches(0);
+  };
 
   const fetchMovies = (query, page = 1) => {
-    resetFetchStates();
-    if (query !== lastQuery) {
-      console.log(`query = ${query} !== lastQuery ${lastQuery}`)
-      setResultsPageNum(1); //reset page num
-      setLastQuery(query);
-    }
     if (!query) return false;
+    resetFetchStates(query);
 
     let apiUrl = BASE_URL.concat(`s=${query}`, `&page=${page}`, `&apikey=${API_KEY}`);
     console.log(`${searchCount}: Calling API @ ${apiUrl}`);
     setSearchCount(searchCount + 1);
+
+    // Fetch data from OMDB API
+    // Store search results from response in container states
+    // and pass that data down to its child MovieList
     fetch(apiUrl)
       .then(resp => resp.json())
       .then(moviesData => {
         if (moviesData.Response === 'True') {
-          setTotalSearchResults(moviesData.totalResults)
+          setTotalMatches(moviesData.totalResults);
           setMovies(moviesData.Search);
+          setLastSearchTitle(query);
         } else {
-          setErrorMessage(moviesData.Error)
+          setError(moviesData.Error);
         }
-        // setSearchTitle(query);
       });
     return true;
   };
 
   const updatePageNum = (page) => {
     setResultsPageNum(page);
-    fetchMovies(lastQuery, page)
-    // fetchMovie(searchTitle, page)
-  }
+    fetchMovies(lastSearchTitle, page);
+  };
 
   const addNominee = (movie) => {
     const nomineeCount = nominees.length;
@@ -72,7 +70,7 @@ const MovieListContainer = () => {
     // the new movie obj using JS Spread operator
     setNominees(oldNominees => [...oldNominees, movie]);
     return true;
-  }
+  };
 
   const removeNominee = (movie) => {
     // remove movie object from array of nominees w/o mutating the state
@@ -90,8 +88,8 @@ const MovieListContainer = () => {
       < MovieSearch fetchMovies={fetchMovies} />
       < MovieList
         movies={movies}
+        totalResults={totalMatches}
         resultsPageNum={resultsPageNum}
-        totalResults={totalSearchResults}
         nominees={nominees}
         nominationFull={nominationFull}
         updatePageNum={updatePageNum}
