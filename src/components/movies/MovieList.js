@@ -6,9 +6,10 @@ const MovieList = (props) => {
   const {
     movies,
     totalResults,
+    resultsPageNum,
+    errorMsg,
     nominees,
     nominationFull,
-    resultsPageNum,
     updatePageNum,
     addNominee
   } = props;
@@ -71,7 +72,7 @@ const MovieList = (props) => {
       {(movieCount > 0) ? (
         renderResults()
       ) : (
-          <p>No movies found. Please try searching again!</p>
+          <p>{errorMsg} Try searching your favorite movie!</p>
         )}
     </div>
   );

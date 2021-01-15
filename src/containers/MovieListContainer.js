@@ -90,6 +90,7 @@ const MovieListContainer = () => {
         movies={movies}
         totalResults={totalMatches}
         resultsPageNum={resultsPageNum}
+        errorMsg={error}
         nominees={nominees}
         nominationFull={nominationFull}
         updatePageNum={updatePageNum}
