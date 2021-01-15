@@ -16,8 +16,9 @@ const MovieSearch = ({ fetchMovies }) => {
   }, [query])
 
   return (
-    <div id='movie-search-bar'>
+    <div>
       <input
+        id='movie-search-bar'
         type='text'
         value={query}
         onChange={handleQueryChange}
