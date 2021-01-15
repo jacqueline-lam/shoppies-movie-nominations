@@ -15,6 +15,7 @@ const NOMINEE_LIMIT = 5;
 const MovieListContainer = () => {
   const [searchCount, setSearchCount] = useState(0);
   // states for each fetch
+  const [lastQuery, setLastQuery] = useState('');
   const [errorMessage, setErrorMessage] = useState(null);
   const [movies, setMovies] = useState([]);
   const [totalSearchResults, setTotalSearchResults] = useState(0);
@@ -27,14 +28,18 @@ const MovieListContainer = () => {
     setErrorMessage(null)
     setMovies([])
     setTotalSearchResults(0)
-    setResultsPageNum(1)
   }
 
-  const fetchMovies = (query) => {
+  const fetchMovies = (query, page = 1) => {
     resetFetchStates();
+    if (query !== lastQuery) {
+      console.log(`query = ${query} !== lastQuery ${lastQuery}`)
+      setResultsPageNum(1); //reset page num
+      setLastQuery(query);
+    }
     if (!query) return false;
 
-    let apiUrl = BASE_URL.concat(`s=${query}`, `&page=${resultsPageNum}`, `&apikey=${API_KEY}`);
+    let apiUrl = BASE_URL.concat(`s=${query}`, `&page=${page}`, `&apikey=${API_KEY}`);
     console.log(`${searchCount}: Calling API @ ${apiUrl}`);
     setSearchCount(searchCount + 1);
     fetch(apiUrl)
@@ -52,7 +57,8 @@ const MovieListContainer = () => {
   };
 
   const updatePageNum = (page) => {
-    setResultsPageNum(page)
+    setResultsPageNum(page);
+    fetchMovies(lastQuery, page)
     // fetchMovie(searchTitle, page)
   }
 
