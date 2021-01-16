@@ -7,7 +7,7 @@ const MovieCard = ({ movie, disableBtn, btnContent, addNominee }) => {
   const poster = movie.Poster !== "N/A" ? movie.Poster : moviePosterPlaceholder;
 
   return (
-    <div className='movie-card'>
+    <div key={movie.imdbID} className='movie-card'>
       <img className='movie-thumbnail' alt='movie thumbnail' src={poster} />
       <h2>{movie.Title}</h2>
       <i>{movie.Year}</i>

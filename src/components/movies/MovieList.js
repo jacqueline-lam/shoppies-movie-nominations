@@ -47,27 +47,31 @@ const MovieList = (props) => {
       <div id='movie-results'>
         <Pluralize singular={'match'} plural={'matches'} count={totalResults} />
         <Tooltip title="Previous Page">
-          <IconButton
-            className="pagination-button"
-            aria-label="next"
-            color="primary"
-            variant="outlined"
-            onClick={(handlePrevPageBtn)}
-            disabled={resultsPageNum <= 1}>
-            <NavigateBeforeIcon />
-          </IconButton>
+          <span>
+            <IconButton
+              className="pagination-button"
+              aria-label="next"
+              color="primary"
+              variant="outlined"
+              onClick={(handlePrevPageBtn)}
+              disabled={resultsPageNum <= 1}>
+              <NavigateBeforeIcon />
+            </IconButton>
+          </span>
         </Tooltip>
         <i>{`Page ${resultsPageNum} of ${totalPages}`}</i>
         <Tooltip title="Next Page">
-          <IconButton
-            className="pagination-button"
-            aria-label="previous"
-            color="primary"
-            variant="outlined"
-            onClick={(handleNextPageBtn)}
-            disabled={resultsPageNum + 1 > totalPages}>
-            <NavigateNextIcon />
-          </IconButton>
+          <span>
+            <IconButton
+              className="pagination-button"
+              aria-label="previous"
+              color="primary"
+              variant="outlined"
+              onClick={(handleNextPageBtn)}
+              disabled={resultsPageNum + 1 > totalPages}>
+              <NavigateNextIcon />
+            </IconButton>
+          </span>
         </Tooltip>
 
         {renderMovies}

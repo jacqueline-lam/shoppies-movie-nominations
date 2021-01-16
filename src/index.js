@@ -17,12 +17,12 @@ const theme = createMuiTheme({
       // Shopify light green
       light: "#c8f277",
       main: "#95BF47",
-      dark: "64943E"
+      dark: "#64943E"
     },
     action: {
       disabled: "#696969",
       disabledBackground: "#696969"
-    }
+    },
   },
   fontFamily: "Roboto"
 });
