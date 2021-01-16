@@ -1,6 +1,9 @@
 import React from 'react';
 import MovieCard from './MovieCard';
-import Button from '@material-ui/core/Button';
+import { IconButton } from '@material-ui/core';
+// import { NavigateNextIcon, NavigateBeforeIcon } from '@material-ui/icons';
+import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
+import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 import Pluralize from 'react-pluralize';
 
 const MovieList = (props) => {
@@ -45,25 +48,48 @@ const MovieList = (props) => {
     return [
       <div id='movie-results'>
         <Pluralize singular={'match'} plural={'matches'} count={totalResults} />
-        <Button
+        {/* <Button
           className="prev-page-btn"
           size="small"
           variant="outlined"
           onClick={(handlePrevPageBtn)}
           disabled={resultsPageNum <= 1}>
-          Prev
-        </Button>
+          &#8249;
+        </Button> */}
+
+        <IconButton
+          aria-label="next"
+          color="primary"
+          variant="outlined"
+          // className="pagination-button"
+          onClick={(handlePrevPageBtn)}
+          disabled={resultsPageNum <= 1}>
+          <NavigateBeforeIcon />
+        </IconButton>
+
         <i>{`Page ${resultsPageNum} of ${totalPages}`}</i>
-        <Button
+
+        <IconButton
+          // className="pagination-button"
+          aria-label="previous"
+          color="primary"
+          variant="outlined"
+          onClick={(handleNextPageBtn)}
+          disabled={resultsPageNum + 1 > totalPages}>
+          <NavigateNextIcon />
+        </IconButton>
+
+        {/* <Button
           className="next-page-btn"
           size="small"
           variant="outlined"
           onClick={(handleNextPageBtn)}
           disabled={resultsPageNum + 1 > totalPages}>
-          Next
-        </Button>
+          &#8250;
+        </Button> */}
+
         {renderMovies}
-      </div>
+      </div >
     ]
   };
 

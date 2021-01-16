@@ -3,12 +3,35 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { createMuiTheme, ThemeProvider } from "@material-ui/core";
+
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      // White
+      light: "#FFFFFF",
+      dark: "#cccccc",
+      main: "#FFF",
+    },
+    secondary: {
+      // Shopify light green
+      light: "#c8f277",
+      main: "#95BF47",
+      dark: "64943E"
+    },
+    action: {
+      disabled: "#696969",
+      disabledBackground: "#696969"
+    }
+  },
+  fontFamily: "Roboto"
+});
 
 ReactDOM.render(
-  <React.StrictMode>
+  <ThemeProvider theme={theme}>
     <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  </ThemeProvider>,
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function

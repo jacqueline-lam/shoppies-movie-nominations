@@ -11,8 +11,8 @@ const MovieCard = ({ movie, disableBtn, btnContent, addNominee }) => {
 
   return (
     <div className='movie-card'>
-      <img className='movie-thumbnail img-fluid' alt='movie thumbnail' src={poster} />
-      <h1>{movie.Title}</h1>
+      <img className='movie-thumbnail' alt='movie thumbnail' src={poster} />
+      <h2>{movie.Title}</h2>
       <i>{movie.Year}</i>
       {/* Nominate Button */}
       <Button

@@ -1,3 +1,16 @@
+/* ---------- FONTS ---------- */
+/* Roboto */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+/* Capitalized and Bold Font -  Bowlby One SC */
+@import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap');
+/* Material-UI Font Icons */
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+/* ---------- GENERAL APP STYLING ---------- */
+body {
+  color: white;
+  background-color: #16161B;
+}
+
 .App {
   text-align: center;
 }
@@ -24,13 +37,57 @@
   color: white;
 }
 
-/* SEARCH BAR */
-#movie-search-bar{
+/* ---------- SEARCH BAR ---------- */
+#movie-search-bar {
   width: 60%;
-  font-weight: 200;
-  padding: 5%;
+  font-size: 1.3em;
+  font-weight: 500;
+  padding: 2%;
   border: block;
-  border-radius: 600px;
+  border-radius: 300px;
   margin: 3% 0%;
   transition: border 100ms ease-in-out;
+}
+
+
+/* PAGINATION BUTTONS */
+/* button.pagination-button {
+  font-size: 1em;
+  font-weight: 400;
+  display:inline-block;
+  padding:0.1em 0.5em;
+  border:0.1em solid #FFFFFF;
+  background-color: none;
+  margin:0 0.3em 0.3em 0.3em;
+  border-radius:0.12em;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-family: 'Roboto', sans-serif;
+  color:#FFFFFF;
+  text-align: center;
+  transition: all 0.2s;
+}
+
+button.pagination-button:hover {
+  color:#000000;
+  background-color:#FFFFFF;
+}
+
+@media all and (max-width:30em) {
+  a.pagination-button{
+    display:block;
+    margin:0.4em auto;
+  }
+} */
+
+/* MOVIE CARDS */
+img.movie-thumbnail {
+  height: auto;
+  width: 150px;
+  border-radius: 5px;
+}
+
+/* NOMINATE BUTTONS */
+button .MuiButtonBase-root, .MuiButton-root, .MuiButton-outlined, .MuiButton-outlinedPrimary, .MuiButton-outlinedSizeSmall, .MuiButton-sizeSmall{
+  background-color: #64943E;
 }
