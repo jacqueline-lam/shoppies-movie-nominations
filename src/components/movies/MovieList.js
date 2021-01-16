@@ -1,7 +1,6 @@
 import React from 'react';
 import MovieCard from './MovieCard';
 import { IconButton } from '@material-ui/core';
-// import { NavigateNextIcon, NavigateBeforeIcon } from '@material-ui/icons';
 import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 import Pluralize from 'react-pluralize';
@@ -26,7 +25,6 @@ const MovieList = (props) => {
   };
 
   const handleNextPageBtn = () => {
-    // setPageNum(prevPageNum => prevPageNum + 1)
     updatePageNum(resultsPageNum + 1);
   };
 
@@ -58,10 +56,10 @@ const MovieList = (props) => {
         </Button> */}
 
         <IconButton
+          className="pagination-button"
           aria-label="next"
           color="primary"
           variant="outlined"
-          // className="pagination-button"
           onClick={(handlePrevPageBtn)}
           disabled={resultsPageNum <= 1}>
           <NavigateBeforeIcon />
@@ -70,7 +68,7 @@ const MovieList = (props) => {
         <i>{`Page ${resultsPageNum} of ${totalPages}`}</i>
 
         <IconButton
-          // className="pagination-button"
+          className="pagination-button"
           aria-label="previous"
           color="primary"
           variant="outlined"

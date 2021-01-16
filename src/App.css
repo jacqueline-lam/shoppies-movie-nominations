@@ -88,6 +88,6 @@ img.movie-thumbnail {
 }
 
 /* NOMINATE BUTTONS */
-button .MuiButtonBase-root, .MuiButton-root, .MuiButton-outlined, .MuiButton-outlinedPrimary, .MuiButton-outlinedSizeSmall, .MuiButton-sizeSmall{
-  background-color: #64943E;
+button.nominate-button {
+  margin:0 1em 0em 1em;
 }

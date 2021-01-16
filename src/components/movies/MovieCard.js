@@ -5,10 +5,6 @@ import Button from '@material-ui/core/Button';
 const MovieCard = ({ movie, disableBtn, btnContent, addNominee }) => {
   const poster = movie.Poster !== "N/A" ? movie.Poster : moviePosterPlaceholder;
 
-  // const buttonValue = () => {
-  //   disableBtn ? `Nominated` : `Nominate`
-  // }
-
   return (
     <div className='movie-card'>
       <img className='movie-thumbnail' alt='movie thumbnail' src={poster} />
@@ -16,10 +12,11 @@ const MovieCard = ({ movie, disableBtn, btnContent, addNominee }) => {
       <i>{movie.Year}</i>
       {/* Nominate Button */}
       <Button
+        className='nominate-button'
         id={movie.imdbID}
         size="small"
         variant="outlined"
-        color="primary"
+        color="secondary"
         style={{ borderRadius: "30px" }}
         onClick={() => addNominee(movie)}
         disabled={disableBtn}>
