@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import moviePosterPlaceholder from '../../images/movie-placeholder.png';
+import Button from '@material-ui/core/Button';
 
-// display movie poster, title, and year
-// delete button to remove nomination
+// Display movie poster, title, and year
+
 // remove deleted movie from nomination list
 // change button disabled state to false;
 const NominatedMovieCard = ({ movie, removeNominee }) => {
@@ -17,20 +18,20 @@ const NominatedMovieCard = ({ movie, removeNominee }) => {
   }
 
   return (
-    <div className='nominated-movie-card'>
-      <img className='movie-thumbnail img-fluid' alt='movie thumbnail' src={poster} />
-      <h3>{title} - <i>{year}</i></h3>
+    <div className="nominated-movie-card">
+      <img className="movie-thumbnail" alt="movie thumbnail" src={poster} />
+      <h3>{title} (<i>{year}</i>)</h3>
       {/* <button>Remove nomination</button> */}
-      <button
+      <Button
         id={movie.imdbID}
+        className="remove-nominee-btn"
         size="small"
         variant="outlined"
         color="primary"
-        style={{ borderRadius: "30px" }}
         onClick={() => handleRemoveBtn(movie)}
         disabled={isRemoved}>
         {isRemoved ? `Removed` : `Remove`}
-      </button>
+      </Button>
     </div >
   );
 };
