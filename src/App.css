@@ -12,6 +12,19 @@
   font-weight: normal;
   font-style: normal;
 }
+/* Broadyway Font */
+@font-face {
+  font-family: 'Broady3DFilled';
+  src: local('Broady3DFilled'), url(./fonts/broadway/Broadway3DFilled.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Broadway3D';
+  src: local('Broadway3D'), url(./fonts/broadway/Broadway3D.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Broadway3DItalic';
+  src: local('Broadway3DItalic'), url(./fonts/broadway/Broadway3D-Italic.ttf) format('truetype');
+}
 /* ---------- GENERAL APP STYLING ---------- */
 body {
   color: white;
@@ -35,7 +48,7 @@ body {
 
 .App-header {
   background-color: #040404;
-  font-family: 'NightAtTheOpera', sans-serif;
+  font-family: 'Broadway3D', sans-serif;
   min-height: 15vh;
   display: flex;
   /* flex-direction: column; */
