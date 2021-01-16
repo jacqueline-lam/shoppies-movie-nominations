@@ -1,9 +1,21 @@
 import React from 'react';
 import MovieCard from './MovieCard';
-import { Container, IconButton, Tooltip } from '@material-ui/core';
+import { Container, IconButton, Tooltip, Grid } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
 import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 import Pluralize from 'react-pluralize';
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+  },
+
+  movieGrid: {
+    width: "100%",
+    height: "100%",
+    margin: theme.spacing(1),
+  },
+}));
 
 const MovieList = (props) => {
   const {
@@ -16,7 +28,7 @@ const MovieList = (props) => {
     updatePageNum,
     addNominee
   } = props;
-
+  const classes = useStyles();
   const resultsPerPage = 10;
   const totalPages = Math.ceil(totalResults / resultsPerPage) || 0;
 
@@ -73,9 +85,18 @@ const MovieList = (props) => {
             </IconButton>
           </span>
         </Tooltip>
-
-        {renderMovies}
-
+        {/* <div className={classes.root}> */}
+        <Grid
+          container
+          spacing={3}
+          className={classes.movieGrid}
+        // direction="row"
+        // justify="flex-start"
+        // alignItems="flex-start"
+        >
+          {renderMovies}
+        </Grid>
+        {/* </div> */}
       </>
     ]
   };

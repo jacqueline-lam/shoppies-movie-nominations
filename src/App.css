@@ -128,3 +128,8 @@ button.nominate-btn, button.remove-nominee-btn {
   border-radius: 30px;
 }
 
+h6.responsive-headers{
+  /* font-size: 2vmax; */
+  font-size: 1.2em;
+  line-height: 1.2;
+}
