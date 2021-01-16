@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: '100%', // 16:9 = '56.25%'
   },
   header: {
-    padding: '5%',
+    padding: '5% 1% 1% 0%',
     height: 80,
     maxWidth: 1000,
     color: '#eeeeee',
@@ -28,6 +28,7 @@ const useStyles = makeStyles((theme) => ({
   },
   button: {
     justifyContent: 'center',
+    margin: 10
   },
   // expand: {
   //   transform: 'rotate(0deg)',
