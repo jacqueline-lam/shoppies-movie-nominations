@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import { Container } from '@material-ui/core';
 const MovieSearch = ({ fetchMovies }) => {
   const [query, setQuery] = useState('')
 
@@ -16,15 +16,15 @@ const MovieSearch = ({ fetchMovies }) => {
   }, [query])
 
   return (
-    <div>
+    <Container id='movie-search' maxWidth='lg'>
       <input
         id='movie-search-bar'
         type='text'
         value={query}
         onChange={handleQueryChange}
-        placeholder="Search Movie Here"
+        placeholder='Search Movie Here'
       />
-    </div>
+    </Container>
   )
 }
 

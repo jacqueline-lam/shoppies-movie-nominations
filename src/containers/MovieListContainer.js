@@ -82,7 +82,7 @@ const MovieListContainer = () => {
   };
 
   return (
-    <div>
+    <div id='main-container'>
       {nominationFull ? <NominationFullBanner /> : null}
       {/* render search bar and pass down handler fn as a prop */}
       < MovieSearch fetchMovies={fetchMovies} />

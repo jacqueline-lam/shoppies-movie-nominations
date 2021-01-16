@@ -1,6 +1,6 @@
 import React from 'react';
 import MovieCard from './MovieCard';
-import { IconButton, Tooltip } from '@material-ui/core';
+import { Container, IconButton, Tooltip } from '@material-ui/core';
 import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 import Pluralize from 'react-pluralize';
@@ -44,7 +44,7 @@ const MovieList = (props) => {
     );
 
     return [
-      <div id='movie-results'>
+      <>
         <Pluralize singular={'match'} plural={'matches'} count={totalResults} />
         <Tooltip title="Previous Page">
           <span>
@@ -75,18 +75,19 @@ const MovieList = (props) => {
         </Tooltip>
 
         {renderMovies}
-      </div >
+
+      </>
     ]
   };
 
   return (
-    <div id='movie-list'>
+    <Container max-width='md' id='movie-list'>
       {(totalResults > 0) ? (
         renderResults()
       ) : (
           <p>{errorMsg} Try searching your favorite movie!</p>
         )}
-    </div>
+    </Container>
   );
 };
 export default MovieList;
