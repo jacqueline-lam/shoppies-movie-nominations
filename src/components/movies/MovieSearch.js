@@ -24,6 +24,7 @@ const MovieSearch = ({ fetchMovies }) => {
         onChange={handleQueryChange}
         placeholder='Search Movie Here'
       />
+      {query ? <h2>Searching for "{query}"</h2> : null}
     </Container>
   )
 }

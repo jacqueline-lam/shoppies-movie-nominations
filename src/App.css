@@ -5,6 +5,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap');
 /* Material-UI Font Icons */
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+/* Night at the Opera Theatre font */
+@font-face {
+  font-family: 'Night At the Opera';
+  src: local('Night At the Opera'), url(./fonts/night-at-the-opera-nf/NightAtTheOperaNF.otf) format('opentype');
+}
 /* ---------- GENERAL APP STYLING ---------- */
 body {
   color: white;
@@ -28,13 +33,24 @@ body {
 
 .App-header {
   background-color: #040404;
-  min-height: 10vh;
+  font-family: 'Night At the Opera';
+  min-height: 15vh;
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: 5vmin;
   color: white;
+}
+
+h1.App-header {
+  display: inline;
+}
+img#logo-img{
+  display: inline;
+  /* float: left; */
+  margin-right: 1em;
+  height: 10vh;
 }
 
 /* ---------- SEARCH BAR ---------- */
