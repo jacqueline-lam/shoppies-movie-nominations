@@ -7,8 +7,10 @@
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 /* Night at the Opera Theatre font */
 @font-face {
-  font-family: 'Night At the Opera';
-  src: local('Night At the Opera'), url(./fonts/night-at-the-opera-nf/NightAtTheOperaNF.otf) format('opentype');
+  font-family: 'NightAtTheOpera';
+  src: local('NightAtTheOpera'), url(./fonts/night-at-the-opera-nf/NightAtTheOperaNF.ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 /* ---------- GENERAL APP STYLING ---------- */
 body {
@@ -33,23 +35,23 @@ body {
 
 .App-header {
   background-color: #040404;
-  font-family: 'Night At the Opera';
+  font-family: 'NightAtTheOpera', sans-serif;
   min-height: 15vh;
   display: flex;
   /* flex-direction: column; */
   align-items: center;
   justify-content: center;
-  font-size: 5vmin;
+  font-size: 12vmin;
   color: white;
 }
 
-h1.App-header {
+span.App-header {
   display: inline;
 }
 img#logo-img{
   display: inline;
   /* float: left; */
-  margin-right: 1em;
+  margin-right: 2%;
   height: 10vh;
 }
 
