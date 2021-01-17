@@ -6,6 +6,8 @@ import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 import Pluralize from 'react-pluralize';
 
+const RESULTS_PER_PAGE = 10;
+
 const useStyles = makeStyles((theme) => ({
   movieGrid: {
     width: "100%",
@@ -27,7 +29,6 @@ const MovieList = (props) => {
   } = props;
 
   const classes = useStyles();
-  const RESULTS_PER_PAGE = 10;
   const totalPages = Math.ceil(totalResults / RESULTS_PER_PAGE) || 0;
 
   const isNominated = (movieID) => {
