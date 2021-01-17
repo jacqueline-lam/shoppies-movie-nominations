@@ -17,7 +17,7 @@ This is a web app created to help manage movie nominations for Shoppies. It is b
 - [Attributions](#attributions)
 - [Contact](#contact)
 
-## :pushpin: Features
+## Features :pushpin:
 #### 1. Search Movie from OMDB's API
 * Data fetched from OMDB API (movies only)
 * Real Time Search: any updates to the search term will update the result list
@@ -32,7 +32,7 @@ This is a web app created to help manage movie nominations for Shoppies. It is b
 #### 5. Notifications
 * A banner will be displayed when the user has 5 nominations
 
-## :thought_balloon: Design Thinking and Decisions
+## Design Thinking & Decisions :thought_balloon:
 #### Fixed Button: Quick Access to Nomination List
 * Fixed button gives easy access to nomination list while adding search results to the list
 * By clicking away, the user can return to movie results instantly
@@ -51,7 +51,7 @@ This is a web app created to help manage movie nominations for Shoppies. It is b
   * Straight forward instructions - "Nominate your favorite movies..."
   * Floating button to display nomination list
 
-## :bulb: Other Features and Ideas for Improvements
+## Other Ideas and Future Improvements :bulb:
 * Animations
   * Loading GIF
   * Nominations complete confetti
@@ -61,12 +61,14 @@ This is a web app created to help manage movie nominations for Shoppies. It is b
   * Improve feedback: add more descriptive labels
   * Improve color contrast: make sure text and icons follow the color contrast ratio recommendations and are legible against the background colors
 
-## :computer: Technologies Implemented
+## Tech Stacks :computer:
 1. React.js (`create-react-app`)
 2. Material UI: React UI Framework
 3. OMDB API Requests
+4. HTML and CSS
+5. GitHub Pages
 
-## :arrow_down: Installation and Deployment
+## Installation & Deployment :arrow_down:
 In the project directory, you can run:
 
 `npm install && npm start`
@@ -80,6 +82,7 @@ To deploy, run:
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
+---
 ## Contributing
 Bug reports and pull requests are welcome on GitHub at https://github.com/jacqueline-lam/shoppies-movie-nominations. Contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
