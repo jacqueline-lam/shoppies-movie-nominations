@@ -1,15 +1,25 @@
 import React from 'react';
 import moviePosterPlaceholder from '../../images/movie-placeholder.png';
-import { makeStyles, createMuiTheme, responsiveFontSizes, ThemeProvider } from '@material-ui/core/styles';
-import { Grid, Card, CardContent, CardMedia, CardActions, Typography, Button } from '@material-ui/core';
-import AddIcon from '@material-ui/icons/Add';
+import {
+  makeStyles,
+  createMuiTheme,
+  responsiveFontSizes
+} from '@material-ui/core/styles';
+import {
+  Grid,
+  Card,
+  CardContent,
+  CardMedia,
+  CardActions,
+  Typography,
+  Button
+} from '@material-ui/core';
 
 let customTheme = createMuiTheme();
 customTheme = responsiveFontSizes(customTheme);
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    // maxWidth: 345,
     minWidth: 160,
     backgroundColor: '#2d2d37', //12dp elevation
   },
@@ -80,5 +90,4 @@ const MovieCard = (props) => {
     </Grid>
   );
 };
-
 export default MovieCard;

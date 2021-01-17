@@ -5,8 +5,9 @@ import { Container, Typography } from '@material-ui/core';
 const NominatedMovieList = (props) => {
   const {
     nominees,
-    removeNominee
+    removeNominee,
   } = props;
+
   const nomineesCount = nominees.length;
 
   return (
@@ -29,5 +30,6 @@ const NominatedMovieList = (props) => {
       </div>
     </Container>
   );
-}
+};
+
 export default NominatedMovieList;

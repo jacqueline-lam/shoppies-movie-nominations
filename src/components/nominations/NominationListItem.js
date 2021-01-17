@@ -17,7 +17,7 @@ const useStyles = makeStyles({
   poster: {
     width: '10vh',
     height: 'auto',
-    marginRight: '1em'
+    marginRight: '1em',
   },
   title: {
     display: 'inline',
@@ -28,7 +28,7 @@ const useStyles = makeStyles({
   button: {
     margin: '0 1em 0.2em 1em',
     borderRadius: '30px',
-  }
+  },
 });
 
 // Display movie poster, title, and year
@@ -36,8 +36,9 @@ const useStyles = makeStyles({
 const NominatedMovieCard = (props) => {
   const {
     movie,
-    removeNominee
+    removeNominee,
   } = props;
+
   const classes = useStyles();
   const [isRemoved, setIsRemoved] = useState(false);
   const title = movie.Title;

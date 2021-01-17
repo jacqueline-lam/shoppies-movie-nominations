@@ -24,10 +24,10 @@ const theme = createMuiTheme({
     },
     action: {
       disabled: "#696969",
-      disabledBackground: "#696969"
+      disabledBackground: "#696969",
     },
   },
-  fontFamily: "Roboto"
+  fontFamily: "Roboto",
 });
 
 ReactDOM.render(

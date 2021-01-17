@@ -108,4 +108,5 @@ const MovieList = (props) => {
     </Container>
   );
 };
+
 export default MovieList;

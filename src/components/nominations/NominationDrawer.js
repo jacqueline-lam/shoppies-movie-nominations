@@ -18,16 +18,16 @@ const useStyles = makeStyles({
     listStyle: 'none',
     "& .MuiDrawer-paper ": {
       backgroundColor: '#1D1E21',
-      fontFamily: 'Broadway3D'
+      fontFamily: 'Broadway3D',
     },
-    padding: '0% 2% 0% 0% ',
+    padding: '0% 2% 0% 0%',
   },
   heading: {
     display: 'inline',
   },
   note: {
-    padding: '0% 3% 1% 3% ',
-  }
+    padding: '0% 3% 1% 3%',
+  },
 });
 
 const NominationDrawer = (props) => {
@@ -90,12 +90,11 @@ const NominationDrawer = (props) => {
             )
         }
       </List>
-    </div >
+    </div>
   );
 
   return (
     <div id="nomination-drawer">
-      {/* <Button onClick={toggleDrawer(true)}>test btn</Button> */}
       < SwipeableDrawer
         anchor='right'
         open={isOpen}
@@ -104,19 +103,8 @@ const NominationDrawer = (props) => {
       >
         {renderNominationList}
       </SwipeableDrawer >
-    </div >
+    </div>
   );
-
-  // Responsive Design: Swipe or clickaway to close drawer
-  // const toggleDrawer = () => {
-  //   // const [closeDrawer] = this.props;
-  //   // Edge case or exception buttons
-  //   // if (event && event.type === "keydown" && (event.key === "Tab" || event.key === "Shift")) {
-  //   //   return;
-  //   // }
-  //   closeDrawer();
-  // };
-
 };
 
 export default NominationDrawer;

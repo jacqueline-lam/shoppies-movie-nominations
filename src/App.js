@@ -12,6 +12,6 @@ function App() {
       <MovieListContainer />
     </div>
   );
-}
+};
 
 export default App;

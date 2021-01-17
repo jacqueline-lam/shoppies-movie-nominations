@@ -1,8 +1,12 @@
 import React from 'react';
 import { makeStyles } from "@material-ui/core/styles";
-import { Fab, Grid, Tooltip } from '@material-ui/core';
 import StarOutlineRoundedIcon from '@material-ui/icons/StarOutlineRounded';
 import StarRoundedIcon from '@material-ui/icons/StarRounded';
+import {
+  Fab,
+  Grid,
+  Tooltip,
+} from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -13,15 +17,16 @@ const useStyles = makeStyles((theme) => ({
   },
   extendedIcon: {
     marginRight: theme.spacing(1),
-  }
+  },
 }));
 
 // Nomination Count Floating Action Button - click to display full list
 const NominatationFloatingBtn = (props) => {
   const {
     nomineeCount,
-    toggleNominationDrawer
+    toggleNominationDrawer,
   } = props;
+
   const classes = useStyles();
 
   return (
@@ -44,7 +49,7 @@ const NominatationFloatingBtn = (props) => {
         </Fab>
       </Tooltip>
     </Grid>
-  )
-}
+  );
+};
 
 export default NominatationFloatingBtn;

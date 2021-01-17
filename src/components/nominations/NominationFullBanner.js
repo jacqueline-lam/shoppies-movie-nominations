@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Snackbar, Typography } from '@material-ui/core';
 import MuiAlert from '@material-ui/lab/Alert';
-import { makeStyles } from '@material-ui/core/styles';
 
 
 function Alert(props) {
@@ -10,7 +9,7 @@ function Alert(props) {
 
 const NominationFullBanner = () => {
   const [open, setOpen] = useState(true);
-  const vertical = 'top', horizontal = 'center'
+  const vertical = 'top', horizontal = 'center';
 
   const handleClose = (event) => {
     if (event.currentTarget.title === 'Close') {
@@ -20,9 +19,6 @@ const NominationFullBanner = () => {
 
   return (
     <div className='root'>
-      {/* <Button variant="outlined" onClick={handleClick}>
-        Open success snackbar
-      </Button> */}
       <Snackbar
         open={open}
         onClose={handleClose}
@@ -38,8 +34,8 @@ const NominationFullBanner = () => {
           </Typography>
         </Alert>
       </Snackbar>
-    </div >
-  )
-}
+    </div>
+  );
+};
 
 export default NominationFullBanner;
