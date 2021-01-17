@@ -1,6 +1,6 @@
 import React from 'react';
 import NominatedMovieListItem from './NominationListItem';
-import { Container } from '@material-ui/core';
+import { Container, Typography } from '@material-ui/core';
 
 const NominatedMovieList = (props) => {
   const {
@@ -21,7 +21,10 @@ const NominatedMovieList = (props) => {
             removeNominee={removeNominee}
           />)
         ) : (
-            <i>You have not nominated any movies.</i>
+            <Typography variant='subtitles1' color='primary'>
+              You have not nominated any movies.
+            </Typography>
+
           )}
       </div>
     </Container>

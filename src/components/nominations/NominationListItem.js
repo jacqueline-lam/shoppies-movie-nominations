@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import moviePosterPlaceholder from '../../images/movie-placeholder.png';
+import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 import {
   Button,
   Typography,
@@ -23,6 +24,10 @@ const useStyles = makeStyles({
   },
   divider: {
     light: true,
+  },
+  button: {
+    margin: '0 1em 0.2em 1em',
+    borderRadius: '30px',
   }
 });
 
@@ -80,21 +85,21 @@ const NominatedMovieCard = (props) => {
             </React.Fragment>
           }
         />
-      </ListItem>
-      <ListItemSecondaryAction>
         <Button
-          // edge="end"
           id={movie.imdbID}
-          className="remove-nominee-btn"
-          size="small"
+          className={classes.button}
+          display='inherit-inline'
+          size="medium"
           variant="outlined"
-          color="primary"
+          color="secondary"
           onClick={() => handleRemoveBtn(movie)}
-          disabled={isRemoved}>
+          disabled={isRemoved}
+          endIcon={<DeleteForeverIcon>remove</DeleteForeverIcon>}
+        >
           {isRemoved ? `Removed` : `Remove`}
         </Button>
-      </ListItemSecondaryAction>
-      <Divider className="classes.divider"
+      </ListItem>
+      <Divider className={classes.divider}
         variant="inset"
         component="li"
       />
@@ -103,17 +108,3 @@ const NominatedMovieCard = (props) => {
 };
 
 export default NominatedMovieCard;
-
-// <img className="movie-thumbnail" alt="movie thumbnail" src={poster} />
-//       <h3>{title} (<i>{year}</i>)</h3>
-//       {/* <button>Remove nomination</button> */}
-      // <Button
-      //   id={movie.imdbID}
-      //   className="remove-nominee-btn"
-      //   size="small"
-      //   variant="outlined"
-      //   color="primary"
-      //   onClick={() => handleRemoveBtn(movie)}
-      //   disabled={isRemoved}>
-      //   {isRemoved ? `Removed` : `Remove`}
-      // </Button>

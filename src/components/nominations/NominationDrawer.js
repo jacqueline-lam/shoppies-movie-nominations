@@ -6,10 +6,7 @@ import {
   Typography,
   List,
   ListItem,
-  ListItemSecondaryAction,
   ListItemText,
-  ListItemAvatar,
-  Divider,
 } from '@material-ui/core';
 
 const useStyles = makeStyles({
@@ -19,11 +16,18 @@ const useStyles = makeStyles({
     height: '100%',
     minWidth: '480px',
     listStyle: 'none',
-    "& .MuiDrawer-paper ": { backgroundColor: '#1D1E21' },
+    "& .MuiDrawer-paper ": {
+      backgroundColor: '#1D1E21',
+      fontFamily: 'Broadway3D'
+    },
+    padding: '0% 2% 0% 0% ',
   },
   heading: {
     display: 'inline',
   },
+  note: {
+    padding: '0% 3% 1% 3% ',
+  }
 });
 
 const NominationDrawer = (props) => {
@@ -76,7 +80,13 @@ const NominationDrawer = (props) => {
               removeNominee={removeNominee}
             />)
           ) : (
-              <i>You have not nominated any movies.</i>
+              <Typography
+                className={classes.note}
+                variant='subtitles1'
+                color='primary'
+              >
+                You have not nominated any movies.
+              </Typography>
             )
         }
       </List>

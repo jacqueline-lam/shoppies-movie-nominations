@@ -19,6 +19,9 @@ const theme = createMuiTheme({
       main: "#95BF47",
       dark: "#64943E"
     },
+    remove: {
+      main: "#CF6679",
+    },
     action: {
       disabled: "#696969",
       disabledBackground: "#696969"

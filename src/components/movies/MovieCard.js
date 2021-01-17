@@ -27,8 +27,8 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center', // horizontal alignmet
   },
   movieTitle: {
-    fontSize: '1.2em',
-    lineHeight: '0.8',
+    fontSize: '1.1em',
+    lineHeight: '1',
   },
   button: {
     justifyContent: 'center',
@@ -78,16 +78,6 @@ const MovieCard = (props) => {
             {btnContent}
           </Button>
         </CardActions>
-        {/* <Button
-          className='nominate-btn'
-          id={movie.imdbID}
-          size="medium"
-          variant="outlined"
-          color="secondary"
-          onClick={() => addNominee(movie)}
-          disabled={disableBtn}>
-          {btnContent}
-        </Button> */}
       </Card>
     </Grid>
 
