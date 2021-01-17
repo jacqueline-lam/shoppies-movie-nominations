@@ -37,11 +37,7 @@ const MovieListContainer = () => {
   const fetchMovies = (query, page = 1) => {
     resetFetchStates(query);
     if (!query) return false;
-
     let apiUrl = BASE_URL.concat(`s=${query}`, `&page=${page}`, `&apikey=${API_KEY}`);
-    console.log(`${searchCount}: Calling API @ ${apiUrl}`);
-    setSearchCount(searchCount + 1);
-
     // Fetch data from OMDB API
     // Store search results from response in container states
     // and pass that data down to its child MovieList
@@ -73,7 +69,6 @@ const MovieListContainer = () => {
     // Disable adding more than 5 nominees max
     if (nomineeCount >= NOMINEE_LIMIT) return false;
     if (nomineeCount + 1 >= NOMINEE_LIMIT) setNominationFull(true);
-    // Add (up to 5th) nominee
     // Update state w/ new array by combining old array w/
     // the new movie obj using JS Spread operator
     setNominees(oldNominees => [...oldNominees, movie]);
