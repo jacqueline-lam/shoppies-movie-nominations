@@ -37,7 +37,6 @@ const MovieListContainer = () => {
   const fetchMovies = (query, page = 1) => {
     resetFetchStates(query);
     if (!query) return false;
-    console.log(process.env.REACT_APP_YOUR_API_KEY_NAME)
     let apiUrl = BASE_URL.concat(`s=${query}`, `&page=${page}`, `&type=movie&apikey=${API_KEY}`);
     // Fetch data from OMDB API
     // Store search results from response in container states
@@ -57,7 +56,6 @@ const MovieListContainer = () => {
   };
 
   const toggleNominationDrawer = () => {
-    console.log(`Setting showNominations to: ${!showNominations}`)
     setShowNominations(!showNominations);
   }
 

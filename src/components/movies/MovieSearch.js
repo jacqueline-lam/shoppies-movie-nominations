@@ -13,7 +13,6 @@ const MovieSearch = (props) => {
   // Tells useEffect function to listen for any changes to query state var
   // when query state changes, execute this fn
   useEffect(() => {
-    console.log(`Searching for: ${query}`);
     fetchMovies(query);
   }, [query])
 
