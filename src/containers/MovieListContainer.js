@@ -37,7 +37,7 @@ const MovieListContainer = () => {
   const fetchMovies = (query, page = 1) => {
     resetFetchStates(query);
     if (!query) return false;
-    let apiUrl = BASE_URL.concat(`s=${query}`, `&page=${page}`, `&apikey=${API_KEY}`);
+    let apiUrl = BASE_URL.concat(`s=${query}`, `&page=${page}`, `&type=movie&apikey=${API_KEY}`);
     // Fetch data from OMDB API
     // Store search results from response in container states
     // and pass that data down to its child MovieList

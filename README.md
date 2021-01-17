@@ -2,7 +2,7 @@
 ## Shopify Frontend Developer Intern Challenge - Summer 2021
 
 ### Overview
-This is a web app to manage movie nominations for Shoppies.
+This is a web app created to help manage movie nominations for Shoppies. It is built using React and bootstrapped with [Create React App](https://github.com/facebook/create-react-app). A React UI Freamework, [Material UI](https://material-ui.com/), is also used to implement a responsive UI design.
 
 ### Contents
 - [Features](#features)
@@ -36,6 +36,9 @@ This is a web app to manage movie nominations for Shoppies.
 ### Other Features/ Ideas
 
 ### Technologies Implemented
+1. React.js (`create-react-app`)
+2. Material UI: React UI Framework
+3. OMDB API Requests
 
 ### Installation
 
