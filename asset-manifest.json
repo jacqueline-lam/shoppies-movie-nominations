@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/shoppies-movie-nominations/static/css/main.092f0a93.chunk.css",
+    "main.js": "/shoppies-movie-nominations/static/js/main.c36c9293.chunk.js",
+    "main.js.map": "/shoppies-movie-nominations/static/js/main.c36c9293.chunk.js.map",
+    "runtime-main.js": "/shoppies-movie-nominations/static/js/runtime-main.25269883.js",
+    "runtime-main.js.map": "/shoppies-movie-nominations/static/js/runtime-main.25269883.js.map",
+    "static/js/2.03034871.chunk.js": "/shoppies-movie-nominations/static/js/2.03034871.chunk.js",
+    "static/js/2.03034871.chunk.js.map": "/shoppies-movie-nominations/static/js/2.03034871.chunk.js.map",
+    "static/js/3.a5d28423.chunk.js": "/shoppies-movie-nominations/static/js/3.a5d28423.chunk.js",
+    "static/js/3.a5d28423.chunk.js.map": "/shoppies-movie-nominations/static/js/3.a5d28423.chunk.js.map",
+    "index.html": "/shoppies-movie-nominations/index.html",
+    "static/css/main.092f0a93.chunk.css.map": "/shoppies-movie-nominations/static/css/main.092f0a93.chunk.css.map",
+    "static/js/2.03034871.chunk.js.LICENSE.txt": "/shoppies-movie-nominations/static/js/2.03034871.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/shoppies-movie-nominations/static/media/NightAtTheOperaNF.c32b37e1.ttf",
+    "static/media/logo192.269cb84d.png": "/shoppies-movie-nominations/static/media/logo192.269cb84d.png",
+    "static/media/movie-placeholder.1f7599c3.png": "/shoppies-movie-nominations/static/media/movie-placeholder.1f7599c3.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.25269883.js",
+    "static/js/2.03034871.chunk.js",
+    "static/css/main.092f0a93.chunk.css",
+    "static/js/main.c36c9293.chunk.js"
+  ]
+}
