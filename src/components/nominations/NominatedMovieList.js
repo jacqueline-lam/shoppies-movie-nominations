@@ -1,5 +1,5 @@
 import React from 'react';
-import NominatedMovieCard from './NominatedMovieCard';
+import NominatedMovieListItem from './NominationListItem';
 import { Container } from '@material-ui/core';
 
 const NominatedMovieList = (props) => {
@@ -15,7 +15,7 @@ const NominatedMovieList = (props) => {
       <h4>{nomineesCount} / 5 Movies Nominated</h4>
       <div id='nomination-cards-container'>
         {(nomineesCount > 0) ? (
-          nominees.map(nominatedMovie => <NominatedMovieCard
+          nominees.map(nominatedMovie => <NominatedMovieListItem
             key={nominatedMovie.imdbID}
             movie={nominatedMovie}
             removeNominee={removeNominee}

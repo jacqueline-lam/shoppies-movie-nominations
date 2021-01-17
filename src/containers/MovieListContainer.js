@@ -114,10 +114,6 @@ const MovieListContainer = () => {
         updatePageNum={updatePageNum}
         addNominee={addNominee}
       />
-      <NominatedMovieList
-        nominees={nominees}
-        removeNominee={removeNominee}
-      />
     </div>
   );
 };
