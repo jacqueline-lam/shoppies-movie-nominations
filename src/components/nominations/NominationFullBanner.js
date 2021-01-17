@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Snackbar from '@material-ui/core/Snackbar';
+import { Snackbar, Typography } from '@material-ui/core';
 import MuiAlert from '@material-ui/lab/Alert';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -30,8 +30,12 @@ const NominationFullBanner = () => {
         key="topcenter"
       >
         <Alert onClose={handleClose} severity="success">
-          <h4>You have completed 5 nominations!</h4><br />
-          <i>Changed your mind? Edit the list by removing nominees.</i>
+          <Typography variant="h5" gutterBottom>
+            You have completed 5 nominations!
+          </Typography>
+          <Typography variant="body1" gutterBottom>
+            Changed your mind? Edit the list by removing nominees.
+          </Typography>
         </Alert>
       </Snackbar>
     </div >

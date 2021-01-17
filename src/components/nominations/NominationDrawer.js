@@ -17,7 +17,7 @@ const useStyles = makeStyles({
     backgroundColor: '#1D1E21',
     width: '100%',
     height: '100%',
-    minWidth: '620px',
+    minWidth: '480px',
     listStyle: 'none',
     "& .MuiDrawer-paper ": { backgroundColor: '#1D1E21' },
   },
