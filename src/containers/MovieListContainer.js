@@ -4,7 +4,7 @@ import NominationDrawer from '../components/nominations/NominationDrawer';
 import NominationFullBanner from '../components/nominations/NominationFullBanner';
 import MovieSearch from '../components/movies/MovieSearch';
 import MovieList from '../components/movies/MovieList';
-import NominatedMovieList from '../components/nominations/NominatedMovieList';
+import { Container } from '@material-ui/core';
 
 const API_KEY = '4ec7dca';
 const BASE_URL = 'http://www.omdbapi.com/?';
@@ -90,31 +90,36 @@ const MovieListContainer = () => {
 
   return (
     <div id='main-container'>
-      <NominationFloatingBtn
-        nomineeCount={nomineeCount}
-        toggleNominationDrawer={toggleNominationDrawer}
-      />
-      {nominationFull ? <NominationFullBanner /> : null}
-      {showNominations ? (
-        <NominationDrawer
-          nominees={nominees}
-          removeNominee={removeNominee}
-          toggleDrawer={toggleNominationDrawer}
-          isOpen={showNominations}
+      <Container max-width='lg'>
+        <h2>Nominate your favorite movies for The Shoppies Movie Awards! 🏆</h2>
+        <NominationFloatingBtn
+          nomineeCount={nomineeCount}
+          toggleNominationDrawer={toggleNominationDrawer}
         />
-      ) : null}
-      <MovieSearch fetchMovies={fetchMovies} />
-      <MovieList
-        movies={movies}
-        totalResults={totalMatches}
-        resultsPageNum={resultsPageNum}
-        errorMsg={error}
-        nominees={nominees}
-        nominationFull={nominationFull}
-        updatePageNum={updatePageNum}
-        addNominee={addNominee}
-      />
-    </div>
+        {nominationFull ? <NominationFullBanner /> : null}
+        {
+          showNominations ? (
+            <NominationDrawer
+              nominees={nominees}
+              removeNominee={removeNominee}
+              toggleDrawer={toggleNominationDrawer}
+              isOpen={showNominations}
+            />
+          ) : null
+        }
+        <MovieSearch fetchMovies={fetchMovies} />
+        <MovieList
+          movies={movies}
+          totalResults={totalMatches}
+          resultsPageNum={resultsPageNum}
+          errorMsg={error}
+          nominees={nominees}
+          nominationFull={nominationFull}
+          updatePageNum={updatePageNum}
+          addNominee={addNominee}
+        />
+      </Container>
+    </div >
   );
 };
 export default MovieListContainer;

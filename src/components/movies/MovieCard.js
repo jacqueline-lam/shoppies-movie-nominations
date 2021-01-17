@@ -26,20 +26,14 @@ const useStyles = makeStyles((theme) => ({
     verticalAlign: 'middle',
     justifyContent: 'center', // horizontal alignmet
   },
+  movieTitle: {
+    fontSize: '1.2em',
+    lineHeight: '0.8',
+  },
   button: {
     justifyContent: 'center',
     margin: 10
   },
-  // expand: {
-  //   transform: 'rotate(0deg)',
-  //   marginLeft: 'auto',
-  //   transition: theme.transitions.create('transform', {
-  //     duration: theme.transitions.duration.shortest,
-  //   }),
-  // },
-  // expandOpen: {
-  //   transform: 'rotate(180deg)',
-  // },
 }));
 
 const MovieCard = (props) => {
@@ -58,19 +52,13 @@ const MovieCard = (props) => {
 
     <Grid item md={3} sm={4} xs={6}>
       <Card className={classes.root} key={movie.imdbID}>
-        {/* <CardHeader
-            className={classes.header}
-            // title={movie.Title}
-            // subheader={movie.Year}
-            height="50%">
-          </CardHeader> */}
         <CardMedia
           className={classes.media}
           image={poster}
           title={movie.Title}
         />
         <CardContent className={classes.header}>
-          <Typography variant="h6" className='responsive-headers'>
+          <Typography variant="h6" className={classes.movieTitle}>
             {movie.Title}
           </Typography>
           <Typography variant="subtitle2">
@@ -82,7 +70,7 @@ const MovieCard = (props) => {
             aria-label="add to nomination list"
             className='nominate-btn'
             id={movie.imdbID}
-            size="medium"
+            size="lg"
             variant="outlined"
             color="secondary"
             onClick={() => addNominee(movie)}

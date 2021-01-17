@@ -7,9 +7,6 @@ import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 import Pluralize from 'react-pluralize';
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-  },
-
   movieGrid: {
     width: "100%",
     height: "100%",
@@ -85,18 +82,13 @@ const MovieList = (props) => {
             </IconButton>
           </span>
         </Tooltip>
-        {/* <div className={classes.root}> */}
         <Grid
           container
           spacing={3}
           className={classes.movieGrid}
-        // direction="row"
-        // justify="flex-start"
-        // alignItems="flex-start"
         >
           {renderMovies}
         </Grid>
-        {/* </div> */}
       </>
     ]
   };
@@ -106,7 +98,7 @@ const MovieList = (props) => {
       {(totalResults > 0) ? (
         renderResults()
       ) : (
-          <p>{errorMsg} Try searching your favorite movie!</p>
+          <i>{errorMsg} Try searching your favorite movie!</i>
         )}
     </Container>
   );
