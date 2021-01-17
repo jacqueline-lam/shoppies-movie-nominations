@@ -7,7 +7,7 @@ import MovieList from '../components/movies/MovieList';
 import { Container } from '@material-ui/core';
 
 const API_KEY = process.env.REACT_APP_OMDB_API_KEY
-const BASE_URL = 'http://www.omdbapi.com/?';
+const BASE_URL = 'https://www.omdbapi.com/?';
 const NOMINEE_LIMIT = 5;
 
 const MovieListContainer = () => {

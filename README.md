@@ -1,5 +1,5 @@
 # The Shoppies
-#### Shopify Frontend Developer Intern Challenge - Summer 2021
+### Shopify Frontend Developer Intern Challenge - Summer 2021
 
 ## Overview
 This is a web app created to help manage movie nominations for Shoppies. It is built using React and [Material UI](https://material-ui.com/), a React UI Framework, to implement a responsive UI design.
