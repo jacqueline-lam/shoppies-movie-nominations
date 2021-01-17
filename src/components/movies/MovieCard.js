@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: '100%', // 16:9 = '56.25%'
   },
   header: {
-    padding: '5% 3% 0% 3%',
+    padding: '10% 3% 0% 3%',
     height: 80,
     maxWidth: 1000,
     color: '#eeeeee',
@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
   },
   button: {
     justifyContent: 'center',
-    margin: 10
+    marginBottom: 10
   },
 }));
 
@@ -48,8 +48,6 @@ const MovieCard = (props) => {
   const poster = movie.Poster !== "N/A" ? movie.Poster : moviePosterPlaceholder;
 
   return (
-    // <div className={classes.root}>
-
     <Grid item md={3} sm={4} xs={6}>
       <Card className={classes.root} key={movie.imdbID}>
         <CardMedia
@@ -80,24 +78,7 @@ const MovieCard = (props) => {
         </CardActions>
       </Card>
     </Grid>
-
-    // </div >
   );
 };
 
 export default MovieCard;
-
-
-{/* Nominate Button */ }
-{/* <Button
-        className='nominate-btn'
-        // className={classes.button}
-        id={movie.imdbID}
-        size="medium"
-        variant="outlined"
-        color="secondary"
-        onClick={() => addNominee(movie)}
-        disabled={disableBtn}
-        startIcon={<AddIcon />}>
-        {btnContent}
-      </Button> */}

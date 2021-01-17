@@ -34,7 +34,7 @@ const NominationFullBanner = () => {
             You have completed 5 nominations!
           </Typography>
           <Typography variant="body1" gutterBottom>
-            Changed your mind? Edit the list by removing nominees.
+            Changed your mind? You can edit the list by removing selected nominees.
           </Typography>
         </Alert>
       </Snackbar>
