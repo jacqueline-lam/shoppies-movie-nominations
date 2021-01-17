@@ -23,19 +23,12 @@ const MovieList = (props) => {
     nominees,
     nominationFull,
     updatePageNum,
-    addNominee
+    addNominee,
   } = props;
+
   const classes = useStyles();
-  const resultsPerPage = 10;
-  const totalPages = Math.ceil(totalResults / resultsPerPage) || 0;
-
-  const handlePrevPageBtn = () => {
-    updatePageNum(resultsPageNum - 1);
-  };
-
-  const handleNextPageBtn = () => {
-    updatePageNum(resultsPageNum + 1);
-  };
+  const RESULTS_PER_PAGE = 10;
+  const totalPages = Math.ceil(totalResults / RESULTS_PER_PAGE) || 0;
 
   const isNominated = (movieID) => {
     return (!!nominees.find(nominee => nominee.imdbID === movieID));
@@ -52,9 +45,8 @@ const MovieList = (props) => {
       />
     );
 
-    return [
-      <>
-        <Pluralize singular={'match'} plural={'matches'} count={totalResults} />
+    const renderPagination = (
+      <React.Fragment>
         <Tooltip title="Previous Page">
           <span>
             <IconButton
@@ -62,7 +54,7 @@ const MovieList = (props) => {
               aria-label="next"
               color="primary"
               variant="outlined"
-              onClick={(handlePrevPageBtn)}
+              onClick={() => updatePageNum(resultsPageNum - 1)}
               disabled={resultsPageNum <= 1}>
               <NavigateBeforeIcon />
             </IconButton>
@@ -76,12 +68,23 @@ const MovieList = (props) => {
               aria-label="previous"
               color="primary"
               variant="outlined"
-              onClick={(handleNextPageBtn)}
+              onClick={() => updatePageNum(resultsPageNum + 1)}
               disabled={resultsPageNum + 1 > totalPages}>
               <NavigateNextIcon />
             </IconButton>
           </span>
         </Tooltip>
+      </React.Fragment>
+    )
+
+    return (
+      <React.Fragment>
+        <Pluralize
+          singular={'match'}
+          plural={'matches'}
+          count={totalResults}
+        />
+        {renderPagination}
         <Grid
           container
           spacing={3}
@@ -89,8 +92,9 @@ const MovieList = (props) => {
         >
           {renderMovies}
         </Grid>
-      </>
-    ]
+        {renderPagination}
+      </React.Fragment>
+    );
   };
 
   return (
