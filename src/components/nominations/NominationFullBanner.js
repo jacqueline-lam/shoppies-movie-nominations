@@ -8,19 +8,6 @@ function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
 
-// const useStyles = makeStyles((theme) => ({
-//   root: {
-//     width: '100%',
-//     anchorOrigin: {
-//       horizontal: 'center',
-//       vertical: 'top'
-//     },
-//     // '& > * + *': {
-//     //   marginTop: theme.spacing(2),
-//     // },
-//   },
-// }));
-
 const NominationFullBanner = () => {
   // const classes = useStyles();
   const [open, setOpen] = useState(true);

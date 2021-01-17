@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+import NominationFloatingBtn from '../components/nominations/NominationFloatingBtn';
+import NominationFullBanner from '../components/nominations/NominationFullBanner';
 import MovieSearch from '../components/movies/MovieSearch';
 import MovieList from '../components/movies/MovieList';
 import NominatedMovieList from '../components/nominations/NominatedMovieList';
-import NominationFullBanner from '../components/nominations/NominationFullBanner';
 
 const API_KEY = '4ec7dca';
 const BASE_URL = 'http://www.omdbapi.com/?';
@@ -19,6 +20,7 @@ const MovieListContainer = () => {
   const [resultsPageNum, setResultsPageNum] = useState(1);
   // Nominees state
   const [nominees, setNominees] = useState([]);
+  const nomineeCount = nominees.length;
   const [nominationFull, setNominationFull] = useState(false);
 
   const resetFetchStates = (searchTitle) => {
@@ -61,7 +63,6 @@ const MovieListContainer = () => {
   };
 
   const addNominee = (movie) => {
-    const nomineeCount = nominees.length;
     // Disable adding more than 5 nominees max
     if (nomineeCount >= NOMINEE_LIMIT) return false;
     if (nomineeCount + 1 >= NOMINEE_LIMIT) setNominationFull(true);
@@ -74,7 +75,6 @@ const MovieListContainer = () => {
 
   const removeNominee = (movie) => {
     // remove movie object from array of nominees w/o mutating the state
-    const nomineeCount = nominees.length;
     if (nomineeCount - 1 < NOMINEE_LIMIT) {
       setNominationFull(false);
     }
@@ -83,6 +83,9 @@ const MovieListContainer = () => {
 
   return (
     <div id='main-container'>
+      < NominationFloatingBtn
+        nomineeCount={nomineeCount}
+      />
       {nominationFull ? <NominationFullBanner /> : null}
       {/* render search bar and pass down handler fn as a prop */}
       < MovieSearch fetchMovies={fetchMovies} />
