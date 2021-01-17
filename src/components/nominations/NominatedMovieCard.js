@@ -6,7 +6,12 @@ import Button from '@material-ui/core/Button';
 
 // remove deleted movie from nomination list
 // change button disabled state to false;
-const NominatedMovieCard = ({ movie, removeNominee }) => {
+const NominatedMovieCard = (props) => {
+  const {
+    movie,
+    removeNominee
+  } = props;
+
   const [isRemoved, setIsRemoved] = useState(false);
   const title = movie.Title;
   const year = movie.Year;

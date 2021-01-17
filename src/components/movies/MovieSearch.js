@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Container } from '@material-ui/core';
-const MovieSearch = ({ fetchMovies }) => {
+
+const MovieSearch = (props) => {
+  const { fetchMovies } = props;
   const [query, setQuery] = useState('')
 
   const handleQueryChange = (event) => {

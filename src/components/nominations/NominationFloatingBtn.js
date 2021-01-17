@@ -17,11 +17,12 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 // Nomination Count Floating Action Button - click to display full list
-const NominatationFloatingBtn = ({ nomineeCount }) => {
+const NominatationFloatingBtn = (props) => {
+  const {
+    nomineeCount,
+    toggleNominationDrawer
+  } = props;
   const classes = useStyles();
-  const handleFloatingBtnClick = () => {
-
-  }
 
   return (
     <Grid container
@@ -30,10 +31,10 @@ const NominatationFloatingBtn = ({ nomineeCount }) => {
       <Tooltip title="Your Nominations">
         <Fab
           variant="extended"
-          color='secondary'
-          size='large'
-          aria-label='show nominations'
-          onClick={handleFloatingBtnClick}>
+          color="secondary"
+          size="large"
+          aria-label="show nominations"
+          onClick={() => toggleNominationDrawer()}>
           {(!nomineeCount) ? (
             <StarOutlineRoundedIcon spacing={3} className={classes.extendedIcon} />
           ) : (

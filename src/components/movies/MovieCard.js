@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: '100%', // 16:9 = '56.25%'
   },
   header: {
-    padding: '5% 1% 1% 0%',
+    padding: '5% 3% 0% 3%',
     height: 80,
     maxWidth: 1000,
     color: '#eeeeee',
@@ -42,7 +42,14 @@ const useStyles = makeStyles((theme) => ({
   // },
 }));
 
-const MovieCard = ({ movie, disableBtn, btnContent, addNominee }) => {
+const MovieCard = (props) => {
+  const {
+    movie,
+    disableBtn,
+    btnContent,
+    addNominee
+  } = props;
+
   const classes = useStyles();
   const poster = movie.Poster !== "N/A" ? movie.Poster : moviePosterPlaceholder;
 

@@ -2,7 +2,11 @@ import React from 'react';
 import NominatedMovieCard from './NominatedMovieCard';
 import { Container } from '@material-ui/core';
 
-const NominatedMovieList = ({ nominees, removeNominee }) => {
+const NominatedMovieList = (props) => {
+  const {
+    nominees,
+    removeNominee
+  } = props;
   const nomineesCount = nominees.length;
 
   return (

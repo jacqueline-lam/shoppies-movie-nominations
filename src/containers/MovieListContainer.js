@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import NominationFloatingBtn from '../components/nominations/NominationFloatingBtn';
+import NominationDrawer from '../components/nominations/NominationDrawer';
 import NominationFullBanner from '../components/nominations/NominationFullBanner';
 import MovieSearch from '../components/movies/MovieSearch';
 import MovieList from '../components/movies/MovieList';
@@ -19,9 +20,10 @@ const MovieListContainer = () => {
   const [totalMatches, setTotalMatches] = useState(0);
   const [resultsPageNum, setResultsPageNum] = useState(1);
   // Nominees state
+  const [showNominations, setShowNominations] = useState(false);
   const [nominees, setNominees] = useState([]);
-  const nomineeCount = nominees.length;
   const [nominationFull, setNominationFull] = useState(false);
+  const nomineeCount = nominees.length;
 
   const resetFetchStates = (searchTitle) => {
     // Reset resultsPageNum and lastSearchTitle if is a newSearchTitle
@@ -57,6 +59,11 @@ const MovieListContainer = () => {
     return true;
   };
 
+  const toggleNominationDrawer = () => {
+    console.log(`Setting showNominations to: ${!showNominations}`)
+    setShowNominations(!showNominations);
+  }
+
   const updatePageNum = (page) => {
     setResultsPageNum(page);
     fetchMovies(lastSearchTitle, page);
@@ -83,13 +90,21 @@ const MovieListContainer = () => {
 
   return (
     <div id='main-container'>
-      < NominationFloatingBtn
+      <NominationFloatingBtn
         nomineeCount={nomineeCount}
+        toggleNominationDrawer={toggleNominationDrawer}
       />
       {nominationFull ? <NominationFullBanner /> : null}
-      {/* render search bar and pass down handler fn as a prop */}
-      < MovieSearch fetchMovies={fetchMovies} />
-      < MovieList
+      {showNominations ? (
+        <NominationDrawer
+          nominees={nominees}
+          removeNominee={removeNominee}
+          toggleDrawer={toggleNominationDrawer}
+          isOpen={showNominations}
+        />
+      ) : null}
+      <MovieSearch fetchMovies={fetchMovies} />
+      <MovieList
         movies={movies}
         totalResults={totalMatches}
         resultsPageNum={resultsPageNum}
@@ -97,10 +112,12 @@ const MovieListContainer = () => {
         nominees={nominees}
         nominationFull={nominationFull}
         updatePageNum={updatePageNum}
-        addNominee={addNominee} />
-      < NominatedMovieList
+        addNominee={addNominee}
+      />
+      <NominatedMovieList
         nominees={nominees}
-        removeNominee={removeNominee} />
+        removeNominee={removeNominee}
+      />
     </div>
   );
 };
