@@ -29,6 +29,7 @@
 body {
   color: #eeeeee;
   background-color: #16161B;
+  padding-bottom: 20px;
 }
 
 .App {
@@ -89,3 +90,7 @@ button.nominate-btn, button.remove-nominee-btn {
   border-radius: 30px;
 }
 
+/* ---------- NOMINATION DRAWER ------------*/
+div#nomination-drawer {
+  background-color: #383845;
+}

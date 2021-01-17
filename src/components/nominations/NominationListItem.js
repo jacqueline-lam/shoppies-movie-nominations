@@ -7,13 +7,14 @@ import {
   Typography,
   ListItem,
   ListItemAvatar,
-  Avatar,
-  ListItemSecondaryAction,
   ListItemText,
   Divider,
 } from '@material-ui/core';
 
 const useStyles = makeStyles({
+  listItem: {
+    backgroundColor: '#1D1E21',
+  },
   poster: {
     width: '10vh',
     height: 'auto',
@@ -21,6 +22,11 @@ const useStyles = makeStyles({
   },
   title: {
     display: 'inline',
+    fontSize: '1.1em',
+    lineHeight: '0.5px',
+  },
+  subtitle: {
+    fontSize: '0.8em',
   },
   divider: {
     light: true,
@@ -52,7 +58,7 @@ const NominatedMovieCard = (props) => {
 
   return (
     <React.Fragment>
-      <ListItem className="nominated-movie-listitem">
+      <ListItem className={classes.listItem}>
         <ListItemAvatar>
           <img
             alt={`${title} Movie Poster`}

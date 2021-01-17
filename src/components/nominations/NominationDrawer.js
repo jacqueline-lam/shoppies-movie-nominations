@@ -14,7 +14,7 @@ const useStyles = makeStyles({
     backgroundColor: '#1D1E21',
     width: '100%',
     height: '100%',
-    minWidth: '480px',
+    maxWidth: '480px',
     listStyle: 'none',
     "& .MuiDrawer-paper ": {
       backgroundColor: '#1D1E21',
@@ -66,7 +66,7 @@ const NominationDrawer = (props) => {
                   className={classes.subheading}
                   color="primary"
                 >
-                  {nomineesCount} / 5 Movies Nominated
+                  🌟 {nomineesCount} / 5 Movie Nominations
                    </Typography>
               </React.Fragment>
             }
