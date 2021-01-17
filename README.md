@@ -24,6 +24,7 @@ This is a web app created to help manage movie nominations for Shoppies. It is b
 ### Notifications
 
 ## Design Thinking and Decisions
+* Fixed button for easy access to nomination list
 
 ## Other Features/ Ideas for Improvements
 * Save nomination movies with localStorage

@@ -6,7 +6,7 @@ import MovieSearch from '../components/movies/MovieSearch';
 import MovieList from '../components/movies/MovieList';
 import { Container } from '@material-ui/core';
 
-const API_KEY = '4ec7dca';
+const API_KEY = process.env.REACT_APP_OMDB_API_KEY
 const BASE_URL = 'http://www.omdbapi.com/?';
 const NOMINEE_LIMIT = 5;
 
@@ -37,6 +37,7 @@ const MovieListContainer = () => {
   const fetchMovies = (query, page = 1) => {
     resetFetchStates(query);
     if (!query) return false;
+    console.log(process.env.REACT_APP_YOUR_API_KEY_NAME)
     let apiUrl = BASE_URL.concat(`s=${query}`, `&page=${page}`, `&type=movie&apikey=${API_KEY}`);
     // Fetch data from OMDB API
     // Store search results from response in container states
