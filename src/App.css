@@ -68,9 +68,13 @@ img#logo-img{
   padding: 2%;
   border: block;
   border-radius: 300px;
-  margin: 3% 0%;
-  transition: border 100ms ease-in-out;
+  margin: 2% 0%;
 }
+
+/* #movie-search-bar input:focus{
+  outline: none;
+  border: 1px solid #64943E;
+} */
 
 /* ---------- NOMINATION DRAWER TITLE ----------*/
 h2#nomination-list{

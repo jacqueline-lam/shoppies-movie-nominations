@@ -78,7 +78,7 @@ const MovieCard = (props) => {
             aria-label="add to nomination list"
             className='nominate-btn'
             id={movie.imdbID}
-            size="lg"
+            size="large"
             variant="outlined"
             color="secondary"
             onClick={() => addNominee(movie)}
