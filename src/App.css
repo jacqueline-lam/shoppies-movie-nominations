@@ -39,7 +39,7 @@ body {
 .App-header {
   background-color: #040404;
   font-family: 'Broadway3D', sans-serif;
-  min-height: 20vh;
+  min-height: 12vh;
   display: flex;
   padding-top: 0.1em;
   /* flex-direction: column; */

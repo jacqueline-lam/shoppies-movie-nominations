@@ -11,7 +11,7 @@ import {
 const useStyles = makeStyles((theme) => ({
   root: {
     position: 'fixed',
-    top: '5%',
+    top: '7%',
     right: '2%',
     fontSize: '200%',
   },

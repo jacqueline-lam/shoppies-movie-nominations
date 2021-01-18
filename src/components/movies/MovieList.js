@@ -12,7 +12,8 @@ const useStyles = makeStyles((theme) => ({
   movieGrid: {
     width: "100%",
     height: "100%",
-    margin: theme.spacing(1),
+    justify: 'center',
+    // margin: theme.spacing(1),
   },
 }));
 
@@ -88,7 +89,7 @@ const MovieList = (props) => {
         {renderPagination}
         <Grid
           container
-          spacing={3}
+          spacing={2}
           className={classes.movieGrid}
         >
           {renderMovies}
@@ -99,7 +100,7 @@ const MovieList = (props) => {
   };
 
   return (
-    <Container max-width='md' id='movie-list'>
+    <Container max-width='lg' id='movie-list'>
       {(totalResults > 0) ? (
         renderResults()
       ) : (

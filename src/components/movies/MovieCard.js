@@ -20,7 +20,7 @@ customTheme = responsiveFontSizes(customTheme);
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    minWidth: 160,
+    // minWidth: 160,
     backgroundColor: '#2d2d37', //12dp elevation
   },
   media: {
