@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/shoppies-movie-nominations/static/css/main.092f0a93.chunk.css",
-    "main.js": "/shoppies-movie-nominations/static/js/main.c36c9293.chunk.js",
-    "main.js.map": "/shoppies-movie-nominations/static/js/main.c36c9293.chunk.js.map",
+    "main.js": "/shoppies-movie-nominations/static/js/main.ac7c06f9.chunk.js",
+    "main.js.map": "/shoppies-movie-nominations/static/js/main.ac7c06f9.chunk.js.map",
     "runtime-main.js": "/shoppies-movie-nominations/static/js/runtime-main.25269883.js",
     "runtime-main.js.map": "/shoppies-movie-nominations/static/js/runtime-main.25269883.js.map",
     "static/js/2.03034871.chunk.js": "/shoppies-movie-nominations/static/js/2.03034871.chunk.js",
@@ -20,6 +20,6 @@
     "static/js/runtime-main.25269883.js",
     "static/js/2.03034871.chunk.js",
     "static/css/main.092f0a93.chunk.css",
-    "static/js/main.c36c9293.chunk.js"
+    "static/js/main.ac7c06f9.chunk.js"
   ]
 }
