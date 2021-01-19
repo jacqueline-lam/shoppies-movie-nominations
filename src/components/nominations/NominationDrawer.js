@@ -29,7 +29,7 @@ const useStyles = makeStyles({
     display: 'inline',
   },
   none: {
-    padding: '0% 0% 0% 3%',
+    padding: '10% 0% 0% 3%',
   },
 });
 

@@ -11,9 +11,9 @@ import {
 const useStyles = makeStyles((theme) => ({
   root: {
     position: 'fixed',
-    top: '7%',
-    right: '2%',
-    fontSize: '200%',
+    bottom: '6%',
+    right: '3%',
+    fontSize: '300%',
   },
   extendedIcon: {
     marginRight: theme.spacing(1),

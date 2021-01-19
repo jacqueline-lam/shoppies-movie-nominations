@@ -18,7 +18,7 @@ function App() {
           <IconButton
             aria-label="source code on github"
             color="primary"
-            size="xs"
+            size="small"
             onClick={() => window.open('https://github.com/jacqueline-lam/shoppies-movie-nominations')}
           >
             <GitHubIcon size="small" />
