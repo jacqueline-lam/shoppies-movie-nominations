@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     height: "100%",
     justify: 'center',
-    // margin: theme.spacing(1),
+    margin: theme.spacing(0.2),
   },
 }));
 
