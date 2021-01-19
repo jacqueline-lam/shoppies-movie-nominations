@@ -9,12 +9,12 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <div id='brand'>
-          <img id='logo-img' alt='movie thumbnail' src={shoppiesIcon} />
+        <div id="brand">
+          <img id="logo-img" alt="movie thumbnail" src={shoppiesIcon} />
           <span>The Shoppies</span>
         </div>
-        <div id='contact'>
-          <i>— by Jacqueline Lam</i>
+        <div id="contact">
+          <i className="italics">— by Jacqueline Lam</i>
           <IconButton
             aria-label="source code on github"
             color="primary"

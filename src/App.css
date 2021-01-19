@@ -82,8 +82,8 @@ div#contact {
   font-size: 0.9em;
 }
 
-i#contact {
-  padding-right:0.3em;
+i.italics {
+  padding-right:0.5em;
 }
 
 /* ---------- Main Container ---------- */
