@@ -26,40 +26,64 @@
   src: local('Broadway3DItalic'), url(./fonts/broadway/Broadway3D-Italic.ttf) format('truetype');
 }
 /* ---------- GENERAL APP STYLING ---------- */
+html, div#root {
+  height: 100%;
+}
+
 body {
+  margin: 0;
   color: #eeeeee;
+  font-family: "Roboto", sans-serif;
   background-color: #16161B;
-  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .App {
   text-align: center;
+  height: 100%;
 }
 
+/* ---------- HEADER ---------- */
 .App-header {
   background-color: #040404;
-  font-family: 'Broadway3D', sans-serif;
   min-height: 12vh;
   display: flex;
-  padding-top: 0.1em;
-  /* flex-direction: column; */
+  padding: 3% 0 2% 0;
+  flex-direction: column  ;
   align-items: center;
   justify-content: center;
-  font-size: 10vw;
   color: white;
 }
-
-span.App-header {
-  margin-top: 3%;
-  display: inline;
+div#brand{
+  background-color: #040404;
+  font-family: 'Broadway3D', sans-serif;
+  display: flex;
+  /* padding-top: 0.1em; */
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 14vw;
+  color: white;
+  width: 100%;
 }
+
 img#logo-img{
-  display: inline;
-  /* float: left; */
   margin: 0 2% 2% 0;
-  height: 6vmax;
+  height: 10vw;
+  width: auto;
 }
 
+div#contact {
+  font-family: 'Roboto', sans-serif;
+  font-size: 2vw;
+}
+
+/* ---------- Main Container ---------- */
+#main-container {
+  padding-bottom: 10em;
+}
 /* ---------- SEARCH BAR ---------- */
 #movie-search-bar {
   width: 80%;

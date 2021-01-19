@@ -10,7 +10,7 @@ const API_KEY = process.env.REACT_APP_OMDB_API_KEY
 const BASE_URL = 'https://www.omdbapi.com/?';
 const NOMINEE_LIMIT = 5;
 
-const MovieListContainer = () => {
+const ShoppiesContainer = () => {
   // STATES
   const [searchCount, setSearchCount] = useState(0);
   // States for each fetch
@@ -116,4 +116,4 @@ const MovieListContainer = () => {
     </div >
   );
 };
-export default MovieListContainer;
+export default ShoppiesContainer;
