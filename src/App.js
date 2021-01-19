@@ -13,7 +13,6 @@ function App() {
           <img id='logo-img' alt='movie thumbnail' src={shoppiesIcon} />
           <span>The Shoppies</span>
         </div>
-
         <div id='contact'>
           <i>by Jacqueline Lam</i>
           <IconButton
@@ -24,7 +23,6 @@ function App() {
           >
             <GitHubIcon size="small" />
           </IconButton >
-
           <IconButton
             aria-label="LinkedIn profile"
             color="primary"
