@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+import Tooltip from '@material-ui/core/Tooltip';
 import moviePosterPlaceholder from '../../images/movie-placeholder.png';
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 import {
-  Button,
+  IconButton,
   Typography,
   ListItem,
   ListItemAvatar,
@@ -93,25 +94,25 @@ const NominatedMovieCard = (props) => {
             </React.Fragment>
           }
         />
-        <Button
-          id={movie.imdbID}
-          className={classes.button}
-          display='inherit-inline'
-          size="medium"
-          variant="outlined"
-          color="secondary"
-          onClick={() => handleRemoveBtn(movie)}
-          disabled={isRemoved}
-          endIcon={<DeleteForeverIcon>remove</DeleteForeverIcon>}
-        >
-          {isRemoved ? `Removed` : `Remove`}
-        </Button>
+        <Tooltip title="Remove nomination">
+          <IconButton
+            id={movie.imdbID}
+            className={classes.button}
+            aria-label="delete"
+            size="medium"
+            color="secondary"
+            onClick={() => handleRemoveBtn(movie)}
+            disabled={isRemoved}
+          >
+            <DeleteForeverIcon />
+          </IconButton>
+        </Tooltip>
       </ListItem>
       <Divider className={classes.divider}
         variant="inset"
         component="li"
       />
-    </React.Fragment>
+    </React.Fragment >
   );
 };
 
