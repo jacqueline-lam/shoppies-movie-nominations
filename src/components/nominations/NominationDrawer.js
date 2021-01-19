@@ -22,11 +22,14 @@ const useStyles = makeStyles({
     },
     padding: '0% 2% 0% 0%',
   },
+  header: {
+    marginBottom: '5px',
+  },
   heading: {
     display: 'inline',
   },
-  note: {
-    padding: '0% 3% 1% 3%',
+  none: {
+    padding: '0% 0% 0% 3%',
   },
 });
 
@@ -44,13 +47,13 @@ const NominationDrawer = (props) => {
   const renderNominationList = (
     <div id="nomination-list" className={classes.list}>
       <List>
-        <ListItem>
+        <ListItem className={classes.header}>
           <ListItemText
             primary={
               <React.Fragment>
                 <Typography
                   component="span"
-                  variant="h2"
+                  variant="h3"
                   className={classes.heading}
                   color="primary"
                 >
@@ -81,7 +84,7 @@ const NominationDrawer = (props) => {
             />)
           ) : (
               <Typography
-                className={classes.note}
+                className={classes.none}
                 variant='subtitles1'
                 color='primary'
               >

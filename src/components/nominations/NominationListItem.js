@@ -14,6 +14,7 @@ import {
 const useStyles = makeStyles({
   listItem: {
     backgroundColor: '#1D1E21',
+    padingBottom: '7px',
   },
   poster: {
     width: '10vh',
