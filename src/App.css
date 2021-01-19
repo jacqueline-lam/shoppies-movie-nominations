@@ -46,6 +46,7 @@ body {
 }
 
 /* ---------- HEADER ---------- */
+/* Center header vertically and horizontally */
 .App-header {
   background-color: #040404;
   min-height: 12vh;
@@ -56,6 +57,7 @@ body {
   justify-content: center;
   color: white;
 }
+
 div#brand{
   background-color: #040404;
   font-family: 'Broadway3D', sans-serif;
@@ -77,12 +79,17 @@ img#logo-img{
 
 div#contact {
   font-family: 'Roboto', sans-serif;
-  font-size: 2vw;
+  font-size: 0.9em;
+}
+
+i#contact {
+  padding-right:0.3em;
 }
 
 /* ---------- Main Container ---------- */
 #main-container {
-  padding-bottom: 10em;
+  padding-top: 2em;
+  padding-bottom: 5em;
 }
 /* ---------- SEARCH BAR ---------- */
 #movie-search-bar {

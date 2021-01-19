@@ -85,7 +85,7 @@ const ShoppiesContainer = () => {
   return (
     <div id='main-container'>
       <Container max-width='lg'>
-        <h2>Nominate your favorite movies for The Shoppies Movie Awards! 🏆</h2>
+        <h2>Nominate five favorite movies for The Shoppies Movie Awards! 🏆</h2>
         <NominationFloatingBtn
           nomineeCount={nomineeCount}
           toggleNominationDrawer={toggleNominationDrawer}

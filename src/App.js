@@ -14,7 +14,7 @@ function App() {
           <span>The Shoppies</span>
         </div>
         <div id='contact'>
-          <i>by Jacqueline Lam</i>
+          <i>— by Jacqueline Lam</i>
           <IconButton
             aria-label="source code on github"
             color="primary"
