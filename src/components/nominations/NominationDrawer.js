@@ -29,7 +29,7 @@ const useStyles = makeStyles({
     display: 'inline',
   },
   none: {
-    padding: '10% 0% 0% 3%',
+    padding: '10% 0% 0% 4%',
   },
 });
 
@@ -85,7 +85,7 @@ const NominationDrawer = (props) => {
           ) : (
               <Typography
                 className={classes.none}
-                variant='subtitles1'
+                variant='subtitle1'
                 color='primary'
               >
                 You have not nominated any movies.
