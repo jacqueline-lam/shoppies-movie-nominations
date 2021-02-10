@@ -1,8 +1,10 @@
 # The Shoppies
-### Shopify Frontend Developer Intern Challenge - Summer 2021
+### Movie Nominations Manager
 Live Site: [The Shoppies](https://jacqueline-lam.github.io/shoppies-movie-nominations/)
 ## Overview
-This is a web app created to help manage movie nominations for Shoppies. It is built using React and [Material UI](https://material-ui.com/), a React UI Framework, to implement a responsive UI design.
+This is a web app created to help manage movie nominations. It is built using React and [Material UI](https://material-ui.com/), a React UI Framework, to implement a responsive UI design.
+
+![The shoppies demo](./public/shoppies-demo.gif)
 
 ## Contents
 - [Features](#features-pushpin)
@@ -27,7 +29,7 @@ This is a web app created to help manage movie nominations for Shoppies. It is b
 ### 3. Add/ Remove Nominations
 * User can add a movie from search results to the nomination list — by clicking the nominate button under the movie
 * User will only be able to nominate up to 5 movies — the nominate button will be disabled once 5 nominations have been made
-* User can view nominated movies by clicking the fixed button on the top right corner of the screen
+* User can view nominated movies by clicking the fixed button on the bottom right corner of the screen
 * Remove button will remove the selected movie from the nomination list
 ### 5. Notifications
 * A banner will be displayed when the user has 5 nominations
